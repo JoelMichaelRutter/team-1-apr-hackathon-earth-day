@@ -1,3 +1,106 @@
+/* Heading Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+/* HEADING FONT FAMILY RULES - font-family: 'Train One', cursive; */
+
+/* Paragraph Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+/* PARAGRAPH FONT FAMILY RULES - font-family: 'Montserrat', sans-serif; */
+
 .main-content {
     min-height: 100vh;
+}
+
+/* FONT HELPER CLASSES -----------------------------*/
+
+.train-font {
+    font-family: 'Train One', cursive;
+}
+
+.mont-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.mont-font-light {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.mont-font-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* end of font helper classes */
+
+/* COLOUR HELPER CLASSES ----------------------------*/
+
+.main-green-bg {
+    background-color: #498E61;
+}
+
+.main-green-font {
+    color: #498E61;
+}
+
+.contrast-light-bg {
+    background-color: #F1FCF4;
+}
+
+.contrast-font {
+    color: #F1FCF4!important;
+}
+/* end of colour helper classes */
+
+/* BOOTSTRAP OVERRIDES */
+
+.navbar-light, .navbar-brand {
+    color: #ebebeb!important;
+}
+
+/* end of bootstrap overrides */
+
+
+/* BASE.HTML STYLINGS */
+
+#navbar-logo {
+    font-size: 2.5rem;
+}
+
+.logo-icon {
+    margin-right: 10px;
+}
+
+/* Underline From Left */
+.hvr-underline-from-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+.hvr-underline-from-left:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #f1fcf493;
+    height: 2px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-left:hover:before, 
+.hvr-underline-from-left:focus:before, 
+.hvr-underline-from-left:active:before {
+    right: 0;
 }
