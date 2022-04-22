@@ -1,0 +1,1 @@
+web: gunicorn earrth.wsgi
