@@ -1,1 +1,1 @@
-web: gunicorn earrth.wsgi
+web: gunicorn earrrth.wsgi
