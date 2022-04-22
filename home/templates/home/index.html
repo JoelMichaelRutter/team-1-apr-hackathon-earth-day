@@ -1,15 +1,32 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
-{% load static %} 
+{% load static %}
 {% block page_header %}
 
 {% endblock %}
 
 {% block content %}
 <div class="row">
-    <div class="col-12 d-flex justify-content-center align-items-center">
-        <h1 class="align-self-center">Ahoy EaRRRth!</h1>
-        <a href="{% url 'profile' %}">EaRRRth Profile</a>
+    <div class="col-12 d-flex justify-content-center align-items-center remove-padding">
+        <div class="home-hero-image">
+            <div class="row">
+                <div class="col-10 offset-1 col-md-6 offset-md-5 col-lg-5 offset-lg-6">
+                    <section class="about-section contrast-font mt-5">
+                        <h3 class="mont-font-bold">Hi, we're <span class="train-font">EaRRRth</span>!</h3>
+                        <p class="mont-font">We're here to challenge you to be better to our planet. Through our three "R"
+                            philosiphy of <span class="fw-bold">R</span>euse, <span class="fw-bold">R</span>educe & <span
+                                class="fw-bold">R</span>ecycle, we're calling on the whole world to come forward and contribute
+                            to helping the environment. We're not asking you to live like a caveman, but if we all made some
+                            small changes on a daily basis, the collective impact would be huge!</p>
+                        <p class="mont-font-bold">Get started today!</p>
+                        <a href="#" class="btn btn-large mont-font-bold light-cta-button rounded-1 hvr-grow-shadow"><i class="fa-solid fa-leaf"></i> Contribute</a>
+        
+                    </section>
+                </div>
+            </div>
+        </div>
     </div>
+    <h1 class="align-self-center">Ahoy EaRRRth!</h1>
+    <a href="{% url 'profile' %}">EaRRRth Profile</a>
 </div>
 {% endblock %}

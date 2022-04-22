@@ -104,3 +104,24 @@
 .hvr-underline-from-left:active:before {
     right: 0;
 }
+
+/* INDEX.HTML STYLINGS --------------------------------- */
+.home-hero-image {
+    background-image: url('/media/home-hero-optimised.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    height: 500px;
+    width: 100%;
+}
+
+.about-section {
+    background-color: #8a7310c0;
+    padding: 15px;
+}
+
+.light-cta-button {
+    color: #000;
+    background-color: #FDE181;
+}
