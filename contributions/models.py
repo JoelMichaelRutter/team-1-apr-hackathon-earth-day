@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Reuse(models.Model):
     """
     Allow user to choose which type of Reuse action to contribute
