@@ -30,7 +30,7 @@
   </script>
   {% endblock %}
 
-  <title>EaRRRth</title>
+  <title>EaRRRth {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -50,6 +50,24 @@
                 <li class="nav-item">
                     <a class="nav-link contrast-font hvr-underline-from-left" href="#"><i class="fa-solid fa-leaf"></i> Contribute</a>
                 </li>
+                {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link contrast-font hvr-underline-from-left" href="#"><i class="fa-solid fa-user"></i> My Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'account_logout' %}"><i class="fa-solid fa-door-open"></i> Sign Out</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link contrast-font dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-user"></i> Profile
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="{% url 'account_login' %}"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</a></li>
+                      <li><a class="dropdown-item" href="{% url 'account_signup' %}"><i class="fa-solid fa-list"></i> Register</a></li>
+                    </ul>
+                  </li>
+                {% endif %}
             </ul>
         </div>
     </div>
