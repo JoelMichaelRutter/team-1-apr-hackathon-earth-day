@@ -31,6 +31,7 @@
 </div>
 <div class="row">
     <div class="col-12 d-flex justify-content-center align-items-center remove-padding flex-column">
+      <h1>Total recycle actions taken so far: {{ recycle_count }}</h1>
         {% for x in recycle_actions %}
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -43,7 +44,7 @@
           </div>
           
         {% endfor %}
-
+        <h1>Total reuse actions taken so far: {{ reuse_count }}</h1>
         {% for x in reuse_actions %}
         
         <div class="card" style="width: 18rem;">
@@ -57,7 +58,8 @@
           </div>
 
         {% endfor %}
-
+        
+        <h1>Total reduce actions taken so far: {{ reduce_count }}</h1>
         {% for x in reduce_actions %}
         
         <div class="card" style="width: 18rem;">

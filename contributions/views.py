@@ -20,6 +20,7 @@ def contributions(request):
     return render(request, 'contributions/contributions.html', context)
 
 
+@login_required
 def add_recycle(request):
     """
     View to handle User creating Recycle Action
@@ -46,6 +47,7 @@ def add_recycle(request):
     return render(request, template, context)
 
 
+@login_required
 def add_reduce(request):
     """
     View to handle User creating Recycle Action
@@ -72,6 +74,7 @@ def add_reduce(request):
     return render(request, template, context)
 
 
+@login_required
 def add_reuse(request):
     """
     View to handle User creating Recycle Action
