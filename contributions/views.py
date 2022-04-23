@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .models import Recycle, Reduce, Reuse
 from .forms import RecycleForm
 
-# Create your views here.
 def testAction(request):
     recyle_contribs = list(Recycle.objects.all())
     reuse_contribs = list(Reuse.objects.all())
@@ -17,3 +16,9 @@ def testAction(request):
     }
     print(recyle_contribs)
     return render(request, 'contributions/contributions.html', context)
+
+
+def contributions(request):
+    """ A view to show contributions form """
+
+    return render(request, 'contributions/contributions.html')
