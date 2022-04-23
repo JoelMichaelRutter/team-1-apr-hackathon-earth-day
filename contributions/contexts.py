@@ -8,9 +8,10 @@ def actions_context(request):
     """
     Make action objects count available across app
     """
-    recycle_objects = list(Recycle.objects.all())
-    reuse_objects = list(Reuse.objects.all())
-    reduce_objects = list(Reduce.objects.all())
+    
+    recycle_objects = Recycle.objects.all()
+    reuse_objects = Reuse.objects.all()
+    reduce_objects = Reduce.objects.all()
 
     recycle_count = len(recycle_objects)
     reuse_count = len(reuse_objects)
