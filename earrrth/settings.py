@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     'home',
     'profiles',
+    'contributions',
 ]
 
 SITE_ID = 1
