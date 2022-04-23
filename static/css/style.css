@@ -127,6 +127,73 @@
 }
 
 
+/* stats grids */
+
+.reuse-parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 450px;
+    border-right: 5px solid #498E61;
+}
+    
+.reuse-stat-1 {
+    grid-area: 1 / 3 / 3 / 4;
+    background-color: blue;
+}
+.reuse-stat-2 {
+    grid-area: 1 / 1 / 3 / 3;
+    background-color: red;
+}
+.reuse-stat-3 { 
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: orange;
+}
+.reuse-stat-4 {
+    grid-area: 3 / 2 / 4 / 3;
+    background-color: teal;
+}
+.reuse-stat-5 {
+    grid-area: 3 / 3 / 4 / 4; 
+    background-color: green;
+}
+
+.reduce-parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 450px;
+}
+    
+.reduce-stat-1 {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: blue;
+}
+
+.reduce-stat-2 {
+    grid-area: 2 / 2 / 4 / 3;
+    background-color: red;
+}
+
+.reduce-stat-3 {
+    grid-area: 2 / 3 / 4 / 4;
+    background-color: orange;
+}
+
+.reduce-stat-4 {
+    grid-area: 1 / 2 / 2 / 4;
+    background-color: teal;
+}
+
+.reduce-stat-5 {
+    grid-area: 2 / 1 / 4 / 2;
+    background-color: green;
+}
+
 /* ALL AUTH TEMPLATE STYLINGS */
 .account-hero-image {
     background-image: url('/media/account-hero-optimised.jpg');
@@ -148,3 +215,4 @@
     width: 90%;
     padding: 5px;
 }
+
