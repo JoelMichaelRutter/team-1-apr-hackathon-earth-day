@@ -17,20 +17,20 @@
     <div class="row justify-content-md-center">
         <div class="col">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li id="font-1"  class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
+                <li class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
                     <button class="nav-link fs-2 train-font " id="reuse-tab" data-bs-toggle="tab" data-bs-target="#reuse"
                         type="button" role="tab" aria-controls="reuse" aria-selected="true">Reuse</button>
                 </li>
-                <li class="nav-item hvr-round-corners contribution-tab-link" role="presentation">
+                <li class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
                     <button class="nav-link fs-2 train-font" id="reduce-tab" data-bs-toggle="tab" data-bs-target="#reduce"
                         type="button" role="tab" aria-controls="reduce" aria-selected="false">Reduce</button>
                 </li>
-                <li id="font-2" class="nav-item hvr-round-corners contribution-tab-link" role="presentation">
+                <li class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
                     <button class="nav-link fs-2 train-font" id="recycle-tab" data-bs-toggle="tab" data-bs-target="#recycle"
                         type="button" role="tab" aria-controls="recycle" aria-selected="false">Recycle</button>
                 </li>
             </ul>
-            <div id="font-3" class="tab-content" id="myTabContent">
+            <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="reuse" role="tabpanel" aria-labelledby="reuse-tab">
                     <form method="POST" action="{% url 'add_reuse' %}" class="form mb-2" enctype="multipart/form-data">
                         {% csrf_token %}

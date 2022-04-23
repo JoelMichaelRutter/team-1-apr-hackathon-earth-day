@@ -221,19 +221,55 @@
 }
 
 /* --------------CONTRIBUTIONS PAGE STYLING -------------------- */ 
-.contribution-tab-link {
-    color:#000;
-    background-color: #498e6159;
+#myTab .nav-item {
+    min-width: 33%;
 }
 
-.nav-link, .nav-link:hover {
-    color:#000;
+#myTab .nav-item button{
+    min-width:100%;
 }
 
-.nav-link.active{
-    background-color: #498E61!important;
-    color: #F1FCF4!important;
+#reuse-tab {
+    background-color: #498e61ad;
 }
+
+#reuse-tab:focus,
+#reuse-tab.active {
+    background-color: #498e61;
+}
+
+#reduce-tab {
+    background-color: #6e8e49ad;
+}
+
+#reduce-tab:focus,
+#reduce-tab.active {
+    background-color: #6e8e49;
+}
+
+#recycle-tab {
+    background-color: #fde081ad;
+}
+
+#recycle-tab:focus,
+#recycle-tab.active {
+    background-color: #fde081;
+}
+
+#reuse-tab:focus, #reduce-tab:focus, #recycle-tab:focus, 
+#reuse-tab.active, #reduce-tab.active, #recycle-tab.active {
+    color:white;
+    margin: 0 0.125rem 0 0.125rem;
+}
+
+.nav-link {
+    color:#000;
+}
+.nav-link:hover, .nav-link:active {
+    color: #ebebeb;
+}
+
+
 
 /* Sweep To Right */
 .hvr-sweep-to-right {
@@ -268,9 +304,9 @@
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
   }
-  .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  /* .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
     color: white;
-  }
+  } */
   .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
