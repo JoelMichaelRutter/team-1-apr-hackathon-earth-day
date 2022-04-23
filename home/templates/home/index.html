@@ -29,4 +29,48 @@
     <h1 class="align-self-center">Ahoy EaRRRth!</h1>
     <a href="{% url 'profile' %}">EaRRRth Profile</a>
 </div>
+<div class="row">
+    <div class="col-12 d-flex justify-content-center align-items-center remove-padding flex-column">
+        {% for x in recycle_actions %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">EaRRRth Action</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.recycle_action }}</h6>
+              <p class="card-text">{{ x.recycle_description }}</p>
+              <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
+              on: {{ x.date }}
+            </div>
+          </div>
+          
+        {% endfor %}
+
+        {% for x in reuse_actions %}
+        
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">EaRRRth Action</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.reuse_action }}</h6>
+              <p class="card-text">{{ x.reuse_description }}</p>
+              <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
+              on: {{ x.date }}
+            </div>
+          </div>
+
+        {% endfor %}
+
+        {% for x in reduce_actions %}
+        
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">EaRRRth Action</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.reduce_action }}</h6>
+              <p class="card-text">{{ x.reduce_description }}</p>
+              <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
+              on: {{ x.date }}
+            </div>
+          </div>
+          
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

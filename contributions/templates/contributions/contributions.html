@@ -10,31 +10,7 @@
 <div class="row">
     <h1 class="align-self-center">Ahoy EaRRRth!</h1>
     <a href="{% url 'profile' %}">EaRRRth Profile</a>
-    <div class="col-12 d-flex justify-content-center align-items-center remove-padding flex-column">
-        {% for x in recycle %}
-        
-        <h2>EaRRRth action: Recycle: {{ x.action }}</h2>
-        
-        <h3>contributed by: {{ x.profile }}</h3>
-        on: {{ x.date }}
-        {% endfor %}
-
-        {% for x in reuse %}
-        
-        <h2>EaRRRth action: Re-Use: {{ x.action }}</h2>
-        
-        <h3>contributed by: {{ x.profile }}</h3>
-        on: {{ x.date }}
-        {% endfor %}
-
-        {% for x in reduce %}
-        
-        <h2>EaRRRth action: Reduce: {{ x.action }}</h2>
-        
-        <h3>contributed by: {{ x.profile }}</h3>
-        on: {{ x.date }}
-        {% endfor %}
-    </div>
+    
 </div>
 
 <div class="container">

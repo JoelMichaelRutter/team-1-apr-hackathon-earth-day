@@ -25,7 +25,7 @@ class Reuse(models.Model):
     reuse_description = models.TextField(max_length=280, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.reuse_action} contributed by {self.profile}'
+        return 'Reuse'
 
 
 class Reduce(models.Model):
@@ -51,7 +51,7 @@ class Reduce(models.Model):
     reduce_description = models.TextField(max_length=280, null=True, blank=True)  # noqa ES501
 
     def __str__(self):
-        return f'{self.reduce_action} contributed by {self.profile}'
+        return 'Reduce'
 
 
 class Recycle(models.Model):
@@ -77,4 +77,4 @@ class Recycle(models.Model):
     recycle_description = models.TextField(max_length=280, null=True, blank=True)  # noqa ES501
 
     def __str__(self):
-        return f'{self.recycle_action} contributed by {self.profile}'
+        return 'Recycle'

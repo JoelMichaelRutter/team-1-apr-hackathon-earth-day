@@ -19,12 +19,10 @@ const countChars = (elemID, chars) => {
     if(charRemain < 0){
         label.innerHTML = '<span style="color: red;">You have exceeded the limit of '+maxLength+' characters</span>';
     }
-    if (charRemain > 1 && charRemain < 280){
+    else {
         label.innerHTML = charRemain+' characters remaining';
     }
-    if (charRemain === 280) {
-        label.innerHTML = currentLabelText;
-    }
+}
 
 commentInputs.forEach(input => input.addEventListener('keyup', (event) => {
     elemID = event.target.id;
