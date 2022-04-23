@@ -20,16 +20,14 @@
                             small changes on a daily basis, the collective impact would be huge!</p>
                         <p class="mont-font-bold">Get started today!</p>
                         <a href="#" class="btn btn-large mont-font-bold light-cta-button rounded-1 hvr-grow-shadow"><i class="fa-solid fa-leaf"></i> Contribute</a>
-        
                     </section>
                 </div>
             </div>
         </div>
     </div>
-    <h1 class="align-self-center">Ahoy EaRRRth!</h1>
-    <a href="{% url 'profile' %}">EaRRRth Profile</a>
 </div>
 <div class="row">
+
     <div class="col-12 d-flex justify-content-center align-items-center remove-padding flex-column">
       <h1>Total recycle actions taken so far: {{ recycle_count }}</h1>
         {% for x in recycle_actions %}
@@ -75,4 +73,31 @@
         {% endfor %}
     </div>
 </div>
+<div class="row">
+    <!-- REUSE STAT COLUMN -->
+    <div class="col-12 col-md-6 col-lg-6">
+        <div class="reuse-parent">
+            <div class="reuse-stat-1"> </div>
+            <div class="reuse-stat-2"> </div>
+            <div class="reuse-stat-3"> </div>
+            <div class="reuse-stat-4"> </div>
+            <div class="reuse-stat-5"> </div>
+        </div>
+    </div>
+    <!-- REDUCE STAT COLUMN -->
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="reduce-parent">
+            <div class="reduce-stat-1"> </div>
+            <div class="reduce-stat-2"> </div>
+            <div class="reduce-stat-3"> </div>
+            <div class="reduce-stat-4"> </div>
+            <div class="reduce-stat-5"> </div>
+        </div>
+    </div>
+    <!-- RECYCLE STAT COLUMN -->
+    <div class="col-12 col-md-12 col-lg-4"></div>
+</div>
+<h1 class="align-self-center">Ahoy EaRRRth!</h1>
+<a href="{% url 'profile' %}">EaRRRth Profile</a>
+
 {% endblock %}
