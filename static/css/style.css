@@ -125,3 +125,28 @@
     color: #000;
     background-color: #FDE181;
 }
+
+
+/* ALL AUTH TEMPLATE STYLINGS */
+.account-hero-image {
+    background-image: url('/media/account-hero-optimised.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.account-form-bg {
+    background-color: #8a7310c0;
+    padding: 15px;
+}
+
+.account-form-field {
+    border: 1px solid darkslategray;
+}
+
+#id_password {
+    margin-left: 0.6vmin;
+}
