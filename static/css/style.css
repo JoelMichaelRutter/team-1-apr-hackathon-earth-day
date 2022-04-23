@@ -125,3 +125,8 @@
     color: #000;
     background-color: #FDE181;
 }
+
+/* Crispy Forms Asterisk Override */
+.asteriskField {
+    display: none;
+}

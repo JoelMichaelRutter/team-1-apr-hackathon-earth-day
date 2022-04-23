@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% load static %}
 {% block page_header %}
@@ -41,69 +42,60 @@
         <div class="col">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">Reuse</button>
+                    <button class="nav-link active" id="reuse-tab" data-bs-toggle="tab" data-bs-target="#reuse"
+                        type="button" role="tab" aria-controls="reuse" aria-selected="true">Reuse</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                        type="button" role="tab" aria-controls="profile" aria-selected="false">Reduce</button>
+                    <button class="nav-link" id="reduce-tab" data-bs-toggle="tab" data-bs-target="#reduce"
+                        type="button" role="tab" aria-controls="reduce" aria-selected="false">Reduce</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
-                        type="button" role="tab" aria-controls="contact" aria-selected="false">Recycle</button>
+                    <button class="nav-link" id="recycle-tab" data-bs-toggle="tab" data-bs-target="#recycle"
+                        type="button" role="tab" aria-controls="recycle" aria-selected="false">Recycle</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <p>Reuse form goes here</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            option 1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            option 2
-                        </label>
-                    </div>
+                <div class="tab-pane fade show active" id="reuse" role="tabpanel" aria-labelledby="reuse-tab">
+                    <form method="POST" action="{% url 'add_reuse' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ reuse_form|crispy }}
+                        <span class="text-off-white" id="image-text"></span>
+                        <div class="text-right">
+                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
+                           <button class="btn btn-black rounded-1" type="submit" id="reuse_submit">Add Action</button>
+                        </div>
+                     </form>
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <p>Reduse form goes here</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            option 1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            option 2
-                        </label>
-                    </div>
+                <div class="tab-pane fade" id="reduce" role="tabpanel" aria-labelledby="reduce-tab">
+                    <form method="POST" action="{% url 'add_reduce' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ reduce_form|crispy }}
+                        <span class="text-off-white" id="image-text"></span>
+                        <div class="text-right">
+                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
+                           <button class="btn btn-black rounded-1" type="submit" id="reduce_submit">Add Action</button>
+                        </div>
+                     </form>
                 </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    <p>Reuse form goes here</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            option 1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            option 2
-                        </label>
-                    </div>
+                <div class="tab-pane fade" id="recycle" role="tabpanel" aria-labelledby="recycle-tab">
+                    <form method="POST" action="{% url 'add_recycle' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ recycle_form|crispy }}
+                        <span class="text-off-white" id="image-text"></span>
+                        <div class="text-right">
+                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
+                           <button class="btn btn-black rounded-1" type="submit" id="recycle_submit">Add Action</button>
+                        </div>
+                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'contributions/js/contributions.js' %}">
+</script>
 {% endblock %}

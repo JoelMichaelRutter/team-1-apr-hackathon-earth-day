@@ -1,5 +1,5 @@
 from django.db import models
-from profiles.models import UserProfile
+from django.contrib.auth.models import User
 
 class Reuse(models.Model):
     """
@@ -15,16 +15,17 @@ class Reuse(models.Model):
         ('other', 'other',),
     )
 
-    action = models.CharField(
+    reuse_action = models.CharField(
         max_length=50,
         choices=REUSE_TYPES,
         default=None
     )
-    profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='reuse_actions')  # noqa ES501
+    profile = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='reuse_actions')  # noqa ES501
     date = models.DateField(auto_now_add=True)
+    reuse_description = models.TextField(max_length=280, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.action} contributed by {self.profile}'
+        return f'{self.reuse_action} contributed by {self.profile}'
 
 
 class Reduce(models.Model):
@@ -40,16 +41,17 @@ class Reduce(models.Model):
         ('meat_intake', 'meat_intake',),
     ]
 
-    action = models.CharField(
+    reduce_action = models.CharField(
         max_length=50,
         choices=REDUCE_TYPES,
         default=None
     )
-    profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='reduce_actions')  # noqa ES501
+    profile = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='reduce_actions')  # noqa ES501
     date = models.DateField(auto_now_add=True)
+    reduce_description = models.TextField(max_length=280, null=True, blank=True)  # noqa ES501
 
     def __str__(self):
-        return f'{self.action} contributed by {self.profile}'
+        return f'{self.reduce_action} contributed by {self.profile}'
 
 
 class Recycle(models.Model):
@@ -65,13 +67,14 @@ class Recycle(models.Model):
         ('organic_waste', 'organic_waste',),
     ]
 
-    action = models.CharField(
+    recycle_action = models.CharField(
         max_length=50,
         choices=RECYCLE_TYPES,
         default=None
     )
-    profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='recycle_actions')  # noqa ES501
+    profile = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='recycle_actions')  # noqa ES501
     date = models.DateField(auto_now_add=True)
+    recycle_description = models.TextField(max_length=280, null=True, blank=True)  # noqa ES501
 
     def __str__(self):
-        return f'{self.action} contributed by {self.profile}'
+        return f'{self.recycle_action} contributed by {self.profile}'

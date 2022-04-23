@@ -3,7 +3,7 @@ from .models import Recycle, Reduce, Reuse
 
 class RecycleAdmin(admin.ModelAdmin):
     list_display = (
-        'action',
+        'recycle_action',
         'profile',
         'date',
     )
@@ -11,7 +11,7 @@ class RecycleAdmin(admin.ModelAdmin):
 
 class ReduceAdmin(admin.ModelAdmin):
     list_display = (
-        'action',
+        'reduce_action',
         'profile',
         'date',
     )
@@ -19,7 +19,7 @@ class ReduceAdmin(admin.ModelAdmin):
 
 class ReuseAdmin(admin.ModelAdmin):
     list_display = (
-        'action',
+        'reuse_action',
         'profile',
         'date',
     )
