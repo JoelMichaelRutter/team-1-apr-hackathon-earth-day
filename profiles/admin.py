@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import ProfileImage
+from .models import UserProfile
 
-class ProfileImageAdmin(admin.ModelAdmin):
+class UserProfileAdmin(admin.ModelAdmin):
     list_display = (
-        'owner',
+        'user',
         'image',
     )
 
-admin.site.register(ProfileImage, ProfileImageAdmin)
+
+admin.site.register(UserProfile, UserProfileAdmin)

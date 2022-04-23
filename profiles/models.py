@@ -8,14 +8,7 @@ class UserProfile(models.Model):
     """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='images/', default='/images/earth_solid.png')  # noqa ES501
 
     def __str__(self):
         return self.user.username
-
-
-class ProfileImage(models.Model):
-    """
-    Allow User to add profile image
-    """
-    owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='profile_image')  # noqa ES501
-    image = models.ImageField(upload_to='images/', blank=True)
