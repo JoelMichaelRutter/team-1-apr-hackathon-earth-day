@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <h1 class="align-self-center train-font">Ahoy EaRRRth!</h1>
+    <a href="{% url 'profile' %}">EaRRRth Profile</a>
+    
+</div>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li id="reuse-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
+                    <button class="nav-link fs-2 train-font " id="reuse-tab" data-bs-toggle="tab" data-bs-target="#reuse"
+                        type="button" role="tab" aria-controls="reuse" aria-selected="true">Reuse</button>
+                </li>
+                <li id="reduce-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
+                    <button class="nav-link fs-2 train-font" id="reduce-tab" data-bs-toggle="tab" data-bs-target="#reduce"
+                        type="button" role="tab" aria-controls="reduce" aria-selected="false">Reduce</button>
+                </li>
+                <li id="recycle-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
+                    <button class="nav-link fs-2 train-font" id="recycle-tab" data-bs-toggle="tab" data-bs-target="#recycle"
+                        type="button" role="tab" aria-controls="recycle" aria-selected="false">Recycle</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="reuse" role="tabpanel" aria-labelledby="reuse-tab">
+                    <form method="POST" action="{% url 'add_reuse' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ reuse_form|crispy }}
+                        <span class="text-off-white" id="image-text"></span>
+                        <div class="text-right">
+                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
+                           <button class="btn btn-black rounded-1" type="submit" id="reuse_submit">Add Action</button>
+                        </div>
+                     </form>
+                </div>
+                <div class="tab-pane fade" id="reduce" role="tabpanel" aria-labelledby="reduce-tab">
+                    <form method="POST" action="{% url 'add_reduce' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ reduce_form|crispy }}
+                        <span class="text-off-white" id="image-text"></span>
+                        <div class="text-right">
+                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
+                           <button class="btn btn-black rounded-1" type="submit" id="reduce_submit">Add Action</button>
+                        </div>
+                     </form>
+                </div>
+                <div class="tab-pane fade" id="recycle" role="tabpanel" aria-labelledby="recycle-tab">
+                    <form method="POST" action="{% url 'add_recycle' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ recycle_form|crispy }}
+                        <span class="text-off-white" id="image-text"></span>
+                        <div class="text-right">
+                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
+                           <button class="btn btn-black rounded-1" type="submit" id="recycle_submit">Add Action</button>
+                        </div>
+                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'contributions/js/contributions.js' %}">
+</script>
+{% endblock %}
