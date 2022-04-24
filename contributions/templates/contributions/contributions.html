@@ -7,40 +7,65 @@
 {% endblock %}
 
 {% block content %}
-<div class="row">
-    <h1 class="align-self-center train-font">Ahoy EaRRRth!</h1>
-    <a href="{% url 'profile' %}">EaRRRth Profile</a>
-    
+<div class="row g-0">
+    <div class="col-12 d-flex justify-content-center align-items-center remove-padding">
+        <div class="contributions-hero-image">
+            <div class="row g-0">
+                <div class="col-10 offset-1 col-md-6 offset-md-1 col-lg-5 offset-lg-1">
+                    <section class="about-section contrast-font mt-5">
+                        <h3 class="train-font">EaRRRth Actions</h3>
+                        <p class="mont-font">You can use the forms tabs below to record how you have <span
+                                class="fw-bold">R</span>eused, <span class="fw-bold">R</span>educed & <span
+                                class="fw-bold">R</span>ecycled. Be descriptive and tell us exactly how you've helped
+                            mother earth!
+                        </p>
+                        <div>
+                            <p class="mont-font-bold"><i class="fa-solid fa-arrow-rotate-left fa-2xl me-2"></i> {{ reuse_count }} reuse contributions and counting!</p>
+                        </div>
+                        <div>
+                            <p class="mont-font-bold"><i class="fa-solid fa-circle-arrow-down fa-2xl me-2"></i> {{ reduce_count }} reduce contributions and counting!</p>
+                        </div>
+                        <div>
+                            <p class="mont-font-bold"><i class="fa-solid fa-recycle fa-2xl me-2"></i> {{ recycle_count }} recycle contributions and counting!</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="container">
+<div class="container mt-4">
     <div class="row justify-content-md-center">
         <div class="col">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li id="reuse-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
-                    <button class="nav-link fs-2 train-font " id="reuse-tab" data-bs-toggle="tab" data-bs-target="#reuse"
-                        type="button" role="tab" aria-controls="reuse" aria-selected="true">Reuse</button>
+                    <button class="nav-link fs-2 train-font " id="reuse-tab" data-bs-toggle="tab"
+                        data-bs-target="#reuse" type="button" role="tab" aria-controls="reuse"
+                        aria-selected="true">Reuse</button>
                 </li>
                 <li id="reduce-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
-                    <button class="nav-link fs-2 train-font" id="reduce-tab" data-bs-toggle="tab" data-bs-target="#reduce"
-                        type="button" role="tab" aria-controls="reduce" aria-selected="false">Reduce</button>
+                    <button class="nav-link fs-2 train-font" id="reduce-tab" data-bs-toggle="tab"
+                        data-bs-target="#reduce" type="button" role="tab" aria-controls="reduce"
+                        aria-selected="false">Reduce</button>
                 </li>
-                <li id="recycle-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
-                    <button class="nav-link fs-2 train-font" id="recycle-tab" data-bs-toggle="tab" data-bs-target="#recycle"
-                        type="button" role="tab" aria-controls="recycle" aria-selected="false">Recycle</button>
+                <li id="recycle-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link"
+                    role="presentation">
+                    <button class="nav-link fs-2 train-font" id="recycle-tab" data-bs-toggle="tab"
+                        data-bs-target="#recycle" type="button" role="tab" aria-controls="recycle"
+                        aria-selected="false">Recycle</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="reuse" role="tabpanel" aria-labelledby="reuse-tab">
-                    <form method="POST" action="{% url 'add_reuse' %}" class="form mb-2" enctype="multipart/form-data">
+                <div class="tab-pane fade show active mont-font-bold" id="reuse" role="tabpanel" aria-labelledby="reuse-tab">
+                    <form method="POST" action="{% url 'add_reuse' %}" class="form mb-2 mt-2" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ reuse_form|crispy }}
                         <span class="text-off-white" id="image-text"></span>
                         <div class="text-right">
-                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
-                           <button class="btn btn-black rounded-1" type="submit" id="reuse_submit">Add Action</button>
+                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1 contrast-font mont-font-bold hvr-grow-shadow"><i class="fa-solid fa-xmark"></i> Reset</a>
+                            <button class="btn btn-black main-green-bg contrast-font mont-font-bold hvr-grow-shadow rounded-1 ms-4" type="submit" id="reuse_submit"><i class="fa-solid fa-circle-check"></i> Submit Contribution</button>
                         </div>
-                     </form>
+                    </form>
                 </div>
                 <div class="tab-pane fade" id="reduce" role="tabpanel" aria-labelledby="reduce-tab">
                     <form method="POST" action="{% url 'add_reduce' %}" class="form mb-2" enctype="multipart/form-data">
@@ -48,25 +73,121 @@
                         {{ reduce_form|crispy }}
                         <span class="text-off-white" id="image-text"></span>
                         <div class="text-right">
-                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
-                           <button class="btn btn-black rounded-1" type="submit" id="reduce_submit">Add Action</button>
+                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1"><i class="fa-solid fa-xmark"></i> Reset</a>
+                                <button class="btn btn-black main-green-bg contrast-font mont-font-bold hvr-grow-shadow rounded-1 ms-4" type="submit" id="reduce_submit"><i class="fa-solid fa-circle-check"></i> Submit Contribution</button>
                         </div>
-                     </form>
+                    </form>
                 </div>
                 <div class="tab-pane fade" id="recycle" role="tabpanel" aria-labelledby="recycle-tab">
-                    <form method="POST" action="{% url 'add_recycle' %}" class="form mb-2" enctype="multipart/form-data">
+                    <form method="POST" action="{% url 'add_recycle' %}" class="form mb-2"
+                        enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ recycle_form|crispy }}
                         <span class="text-off-white" id="image-text"></span>
                         <div class="text-right">
-                           <a class="btn btn-outline-black rounded-1" href="">Cancel</a>
-                           <button class="btn btn-black rounded-1" type="submit" id="recycle_submit">Add Action</button>
+                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1"><i class="fa-solid fa-xmark"></i>Reset</a>
+                            <button class="btn btn-black main-green-bg contrast-font mont-font-bold hvr-grow-shadow rounded-1 ms-4" type="submit" id="recycle_submit"><i class="fa-solid fa-circle-check"></i> Submit Contribution</button>
                         </div>
-                     </form>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- COMMUNITY CONTRIBUTIONS COLUMNS -->
+<div class="row g-0 mt-3">
+    <div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0 no-gutters">
+        <h3 class="train-font text-center community-column-reuse ">Reuse Contributions</h3>
+        <div class="contribution-card-container">
+            {% for action in reuse_actions %}
+                <div class="card cont-card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title mont-font-bold"><i class="fa-solid fa-earth-europe"></i> EaRRRth Action</h5>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font-bold"><i class="fa-solid fa-arrow-rotate-left"></i> {{ action }} -> {{ action.reuse_action }}</h6>
+                        <p class="card-text mont-font">{{ action.reuse_description }}</p>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font">Contributer: {{ action.profile }}</h6>
+                        <p class="card-text mont-font">Contribution date: {{ action.date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0 align-items-center">
+        <h3 class="train-font text-center community-column-reduce">Reduce Contributions</h3>
+        <div class="contribution-card-container">
+            {% for action in reduce_actions %}
+                <div class="card cont-card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title mont-font-bold"><i class="fa-solid fa-earth-europe"></i> EaRRRth Action</h5>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font-bold"><i class="fa-solid fa-circle-arrow-down"></i> {{ action }} -> {{ action.reduce_action }}</h6>
+                        <p class="card-text mont-font">{{ action.reduce_description }}</p>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font">Contributer: {{ action.profile }}</h6>
+                        <p class="card-text mont-font">Contribution date: {{ action.date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0">
+        <h3 class="train-font text-center community-column-recycle">Recycle Contributions</h3>
+        <div class="contribution-card-container">
+            {% for action in recycle_actions %}
+                <div class="card cont-card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title mont-font-bold"><i class="fa-solid fa-earth-europe"></i> EaRRRth Action</h5>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font-bold"><i class="fa-solid fa-recycle"></i> {{ action }} -> {{ action.recycle_action }}</h6>
+                        <p class="card-text mont-font">{{ action.recycle_description }}</p>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font">Contributer: {{ action.profile }}</h6>
+                        <p class="card-text mont-font">Contribution date: {{ action.date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center remove-padding flex-column">
+        {% for x in recycle_actions %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">EaRRRth Action</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.recycle_action }}</h6>
+                <p class="card-text">{{ x.recycle_description }}</p>
+                <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
+                on: {{ x.date }}
+            </div>
+        </div>
+
+        {% endfor %}
+        <h1>Total reuse actions taken so far: {{ reuse_count }}</h1>
+        {% for x in reuse_actions %}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">EaRRRth Action</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.reuse_action }}</h6>
+                <p class="card-text">{{ x.reuse_description }}</p>
+                <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
+                on: {{ x.date }}
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <h1>Total reduce actions taken so far: {{ reduce_count }}</h1>
+        {% for x in reduce_actions %}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">EaRRRth Action</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.reduce_action }}</h6>
+                <p class="card-text">{{ x.reduce_description }}</p>
+                <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
+                on: {{ x.date }}
+            </div>
+        </div>
+
+        {% endfor %}
+    </div> -->
 </div>
 {% endblock %}
 

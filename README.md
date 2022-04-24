@@ -1,108 +1,122 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **[EaRRRth](#)**
+EaRRRth is an environmentaly focused, community based responsive web application where users can contribute their green objectives under the applications "Reuse, Reduce, Recycle" philosiphy. Through this philosiphy and the function of the site, users are able to select a contribution that they've made through the UI and add a comment to describe it. The users contribution is stored in a database and shown throughout the site. The community contributions are then counted and used as statistics throughout the site to promote more users to get involved.
 
-Welcome John Traas,
+## Table of contents
+* ### [Deployed Site](#deployed-website)
+* ### [Demo](#site-demonstration)
+* ### [User Stories](#site-demonstration)
+* ### [UX](#user-experience)
+* ### [Design](#design-features)
+* ### [Features](#functional-features)
+* ### [Technologies](#technologies-used)
+* ### [Testing](#application-testing) - IS THIS NEEDED?
+* ### [Deployment](#deploying-the-site) - IS THIS NEEDED?
+* ### [Further Development](#further-development-scope)
+* ### [Team](#team-credits)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## [**Deployed Website**](#)  
+By clicking the hyperlinked header above, you can access the final deployed site hosted on Heroku.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## <a id="site-demonstration"> **Site Demonstration**</a>  
+![An image of the site on different viewports](#) - WE NEED AN AM I RESPONSIVE IMAGE HERE, I'VE PRETTY GOOD A DOCTORING THESE SEEING AS IT DOESNT WORK FOR FULL STACK PROJECTS
 
-## Gitpod Reminders
+## **User Stories**
+Below are the user stories that needed to be fulfilled for the project to be successful from the perspective of the user and the store owner. There are 10 user stories in total broken down into three different epics:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+| EaRRRth User Stories           |                           |                                                                   |                                                                        |                                               |
+|--------------------------------|---------------------------|-------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------|
+| ID                             | As a….                    | I want to be able to….                                            | So that I can                                                          | Must have, should have, could have, wont have |
+| Registering, log in & logout   |                           |                                                                   |                                                                        |                                               |
+| 1                              | User                      | register easily for an account                                    | enter information into the site that will associate with my account.   | must have                                     |
+| 2                              | User                      | login to my account                                               | enter a contribution  into the site.                                   | must have                                     |
+| 3                              | User                      | logout of my account                                              | so that I can keep my account safe when I am not using the app.        | must have                                     |
+| User profile and entry history |                           |                                                                   |                                                                        |                                               |
+| 4                              | Registered User           | view my profile                                                   | so that I can see what I have done on the site in the past.            | must have                                     |
+| 5                              | Registered User           | view my previous entries                                          | so that I can see what personal impact I have had on the environment.  | must have                                     |
+| 6                              | Registered User           | add a profile avatar                                              | personalise my profile                                                 | should have                                   |
+| User entries                   |                           |                                                                   |                                                                        |                                               |
+| 7                              | Anonymous/Registered User | submit my eco contributions                                       | contribute to the site community and track how I help the environment. | must have                                     |
+| 8                              | Anonymous/Registered User | choose the category of my contribution (reuse, recycle & reduce). | accuratley submit my contribution.                                     | must have                                     |
+| 9                              | Registered User           | leave a message with my contribution                              | add a personal touch and include my contribution details.              | must have                                     |
+| 10                             | Registered User           | add a photo with my contribution                                  | show the site community what I have done                               | could have                                    |
 
-`python3 -m http.server`
+## **UX / Design**
 
-A blue button should appear to click: _Make Public_,
+The UX design for our site was initially conceptualied using balsamiq wireframes. You can find these wireframes [here](docs/wireframes).
 
-Another blue button should appear to click: _Open Browser_.
+### **Positioning**
+All of our site elements were first postitioned using Bootstrap 5. This allows us to work responsively up from mobile first design. We then fine tuned element positioning and responsivenes using custom CSS.
+### **Color Palette**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+We used [Coolers](https://coolors.co/) to create this neat palette for our site. Detail on the use of each color below.
+![Cooler Palette](docs/color-palette/EaRRRth-Cooler-Palette.png)
 
-A blue button should appear to click: _Make Public_,
+**#498E61 Middle Green:** This color is used as our primary green shade, used in the navigation, matched with the hero image, the Reduce tab and column and for submit form buttons.
 
-Another blue button should appear to click: _Open Browser_.
+**#6E8E49AD Maximum Green:** This color is used for our Reuse tabs and column. It contrasts nicely with our primary green to divide our RRR columns in a visully appealing way. It is made slightly transparent to lighten its shade.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**#FDE081AD Jasmine:** This color is used for our Recycle tab, again contrasting nicely with our other shades, giving its section some individuality. It is made slightly transparent for a lighter shade. It is also used for the Sign In, Register and Contribute buttons.
 
-To log into the Heroku toolbelt CLI:
+**#8A7618 Spanish Bistre:** This color is used for our hero image messages. It is a nice olive shade allowing the text and items in the container to pop. It is also used for Cancel buttons.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+**#EEEEEE Cultured:** This color is used as a lower contrast background color in combination with a white backgroud to give a nice highlight to certain containers and add a touch more dynamism to the site.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### **Home**
+The home page contains a hero image, chosen for its clean, minimalist visual appeal and its color scheme which meshes nicely with our sites color palette. The hero image contains our welcome message to new users, acting as an invitation and briefly explaining the purpose of the site and its intended use. The message terminates with a "Contribute" button.
 
-------
+Beneath the hero image, there is a dynamicly designed grid of site user statistics, showing off the contributions of active users to the EaRRRth community. The grid is intended to be eye catching, utilising different cell shapes, colors and icons used draw attention and denote the particular data on display. The stats in these cells are updated, using a Django context processor, every time a user makes a contribution to the specified category.
 
-## Release History
+### **Contributions**
+Our contributions page starts with a hero image and message box. The message box contains data specific to the individual RRR categories, specifically their total contributions. They are also complemented with corresponding icons for easy identification.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Next are the tabs for the three RRRs, nicely contrasting each other. Clicking a tab updates the R actions available to the user in the dropdown menu beneath. The user, if they are a signed in member, can also leave a comment describing the specifics of their fulfillment of the R action they took. They can then click the "Submit" button to save to the sites database. This will update the site data for that R action and display on the home page infographic grid and the contributions page hero image message container. Alternatively, the user can clear the form using "Reset".
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Signed up users who added comments to their contributions have them categoried and displayed at the bottom of the page. These are available for all users to view.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### **Sign In / Register**
+These pages present similarly, with a fun hero image filling the full background. In the top right is a message box containing the user forms, asking for either registration information or sign in membership information. The user has an option to switch to the alternative form via a message link, as an alternative to using the navigation elements.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## **Features**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### - Responsive Design
+### - Responsive Navigation Bar
+### - Reactive User Interface
+### - Anonymous Contribution Functionality
+### - Membership Create and Read Functionality
+### - Data Context Controls for Data Infographics
+### - Membership Profile Options
+### - Contribution History
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## **Technologies**
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Languages Used
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+-   [HTML](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Frameworks, Libraries & Programs Used
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+1. [Bootstrap:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+    - Bootstrap was used to assist with the responsiveness and styling of the website.
+2. [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
+3. [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome Icons was used throughout the website to add icons for aesthetic and UX purposes.
+4. [jQuery:](https://jquery.com/)
+    - jQuery is used for various elements to reduce use of raw javascript code.
+5. [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+6. [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+7. [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the [wireframes](docs/wireframes) during the design process.
+8. [Django:](https://docs.djangoproject.com/en/4.0/)
+    - Django is a Python-based free and open-source web framework that follows the model–template–views (MTV) architectural pattern. It allows a user to quickly put together full stack applications with responsive frontend design and intuative backend controls.
+9. [Heroku:](https://en.wikipedia.org/wiki/Heroku)
+    - Heroku is a cloud platform as a service (PaaS) supporting several programming languages. It serves as the host platform for our website.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## **References**
+Our privacy policy was generated with this [link](https://app.freeprivacypolicy.com/download/5e14f11c-1d94-47f0-aa11-5e6394210b25) on [freeprivacypolicy.com](https://app.freeprivacypolicy.com/).
