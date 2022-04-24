@@ -40,7 +40,7 @@ Below are the user stories that needed to be fulfilled for the project to be suc
 | 9                              | Registered User           | leave a message with my contribution                              | add a personal touch and include my contribution details.              | must have                                     |
 | 10                             | Registered User           | add a photo with my contribution                                  | show the site community what I have done                               | could have                                    |
 
-## **UX**
+## **UX / Design**
 
 The UX design for our site was initially conceptualied using balsamiq wireframes. You can find these wireframes [here](docs/wireframes).
 
@@ -66,8 +66,57 @@ The home page contains a hero image, chosen for its clean, minimalist visual app
 
 Beneath the hero image, there is a dynamicly designed grid of site user statistics, showing off the contributions of active users to the EaRRRth community. The grid is intended to be eye catching, utilising different cell shapes, colors and icons used draw attention and denote the particular data on display. The stats in these cells are updated, using a Django context processor, every time a user makes a contribution to the specified category.
 
-### **Contributions Page**
+### **Contributions**
+Our contributions page starts with a hero image and message box. The message box contains data specific to the individual RRR categories, specifically their total contributions. They are also complemented with corresponding icons for easy identification.
 
+Next are the tabs for the three RRRs, nicely contrasting each other. Clicking a tab updates the R actions available to the user in the dropdown menu beneath. The user, if they are a signed in member, can also leave a comment describing the specifics of their fulfillment of the R action they took. They can then click the "Submit" button to save to the sites database. This will update the site data for that R action and display on the home page infographic grid and the contributions page hero image message container. Alternatively, the user can clear the form using "Reset".
+
+Signed up users who added comments to their contributions have them categoried and displayed at the bottom of the page. These are available for all users to view.
+
+### **Sign In / Register**
+These pages present similarly, with a fun hero image filling the full background. In the top right is a message box containing the user forms, asking for either registration information or sign in membership information. The user has an option to switch to the alternative form via a message link, as an alternative to using the navigation elements.
+
+
+## **Features**
+
+### - Responsive Design
+### - Responsive Navigation Bar
+### - Reactive User Interface
+### - Anonymous Contribution Functionality
+### - Membership Create and Read Functionality
+### - Data Context Controls for Data Infographics
+### - Membership Profile Options
+### - Contribution History
+
+## **Technologies**
+
+### Languages Used
+
+-   [HTML](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### Frameworks, Libraries & Programs Used
+
+1. [Bootstrap:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+    - Bootstrap was used to assist with the responsiveness and styling of the website.
+2. [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
+3. [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome Icons was used throughout the website to add icons for aesthetic and UX purposes.
+4. [jQuery:](https://jquery.com/)
+    - jQuery is used for various elements to reduce use of raw javascript code.
+5. [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+6. [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+7. [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the [wireframes](docs/wireframes) during the design process.
+8. [Django:](https://docs.djangoproject.com/en/4.0/)
+    - Django is a Python-based free and open-source web framework that follows the model–template–views (MTV) architectural pattern. It allows a user to quickly put together full stack applications with responsive frontend design and intuative backend controls.
+9. [Heroku:](https://en.wikipedia.org/wiki/Heroku)
+    - Heroku is a cloud platform as a service (PaaS) supporting several programming languages. It serves as the host platform for our website.
 
 ## **References**
-Our privacy policy was generated using freeprivacypolicy.com with the following link: https://app.freeprivacypolicy.com/download/5e14f11c-1d94-47f0-aa11-5e6394210b25
+Our privacy policy was generated with this [link](https://app.freeprivacypolicy.com/download/5e14f11c-1d94-47f0-aa11-5e6394210b25) on [freeprivacypolicy.com](https://app.freeprivacypolicy.com/).
