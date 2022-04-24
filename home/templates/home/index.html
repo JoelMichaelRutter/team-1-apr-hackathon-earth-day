@@ -26,78 +26,39 @@
         </div>
     </div>
 </div>
-<div class="row">
-
-    <div class="col-12 d-flex justify-content-center align-items-center remove-padding flex-column">
-      <h1>Total recycle actions taken so far: {{ recycle_count }}</h1>
-        {% for x in recycle_actions %}
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">EaRRRth Action</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.recycle_action }}</h6>
-              <p class="card-text">{{ x.recycle_description }}</p>
-              <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
-              on: {{ x.date }}
-            </div>
-          </div>
-          
-        {% endfor %}
-        <h1>Total reuse actions taken so far: {{ reuse_count }}</h1>
-        {% for x in reuse_actions %}
-        
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">EaRRRth Action</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.reuse_action }}</h6>
-              <p class="card-text">{{ x.reuse_description }}</p>
-              <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
-              on: {{ x.date }}
-            </div>
-          </div>
-
-        {% endfor %}
-        
-        <h1>Total reduce actions taken so far: {{ reduce_count }}</h1>
-        {% for x in reduce_actions %}
-        
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">EaRRRth Action</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ x }} -> {{ x.reduce_action }}</h6>
-              <p class="card-text">{{ x.reduce_description }}</p>
-              <h6 class="card-subtitle mb-2 text-muted">contributed by: {{ x.profile }}</h6>
-              on: {{ x.date }}
-            </div>
-          </div>
-          
-        {% endfor %}
-    </div>
-</div>
-<div class="row">
+<div class="row g-0">
     <!-- REUSE STAT COLUMN -->
-    <div class="col-12 col-md-6 col-lg-6">
+    <div class="col-12 col-md-6 col-lg-4 mt-2 mb-1">
         <div class="reuse-parent">
-            <div class="reuse-stat-1"> </div>
-            <div class="reuse-stat-2"> </div>
-            <div class="reuse-stat-3"> </div>
-            <div class="reuse-stat-4"> </div>
-            <div class="reuse-stat-5"> </div>
+            <div class="reuse-stat-1">{{ coffee_cups_count }} users have reused their coffee cups! <i class="fa-solid fa-mug-hot fa-7x"></i></div>
+            <div class="reuse-stat-2"><i class="fa-solid fa-bottle-water fa-7x"></i> {{ water_bottles_count }} users have reused their water bottles!</div>
+            <div class="reuse-stat-3">{{ shopping_bags_count }} users have reused their shopping bags! <i class="fa-solid fa-bag-shopping fa-5x"></i></div>
+            <div class="reuse-stat-4"><i class="fa-solid fa-shirt fa-5x"></i> {{ clothes_count }} users have reused their old clothes!</div>
+            <div class="reuse-stat-5">{{ furniture_count }} users have reused their old furniture! <i class="fa-solid fa-chair fa-3x"></i></div>
+            <div class="reuse-stat-6"><i class="fa-solid fa-jar fa-3x"></i> {{ glass_containers_count }} users have reused their glass containers!</div>
         </div>
     </div>
     <!-- REDUCE STAT COLUMN -->
-    <div class="col-12 col-md-6 col-lg-4">
+    <div class="col-12 col-md-6 col-lg-4 mt-2 mb-1">
         <div class="reduce-parent">
-            <div class="reduce-stat-1"> </div>
-            <div class="reduce-stat-2"> </div>
-            <div class="reduce-stat-3"> </div>
-            <div class="reduce-stat-4"> </div>
-            <div class="reduce-stat-5"> </div>
+            <div class="reduce-stat-1">{{ water_usage_count }} users have reduced their water usage! <i class="fa-solid fa-faucet-drip fa-7x"></i></div>
+            <div class="reduce-stat-2"><i class="fa-solid fa-car fa-7x"></i> {{ car_emissions_count }} users have reduced their car emissions!</div>
+            <div class="reduce-stat-3">{{ electricity_usage_count }} users have reduced their electricity usage! <i class="fa-solid fa-plug-circle-bolt fa-5x"></i></div>
+            <div class="reduce-stat-4"><i class="fa-solid fa-fire-flame-simple fa-5x"></i> {{ natural_gas_usage_count }} users have reduced their gas usage!</div>
+            <div class="reduce-stat-5">{{ food_waste_count }} users have reduced their food waste! <i class="fa-solid fa-carrot fa-3x"></i></div>
+            <div class="reduce-stat-6"><i class="fa-solid fa-drumstick-bite fa-3x"></i> {{ meat_intake_count }} users have reduced their meat intake!</div>
         </div>
     </div>
     <!-- RECYCLE STAT COLUMN -->
-    <div class="col-12 col-md-12 col-lg-4"></div>
+    <div class="col-12 col-md-6 col-lg-4 mt-2 mb-1">
+        <div class="recycle-parent">
+            <div class="recycle-stat-1">{{ plastic_recycle_count }} users have recycled their plastic waste!<i class="fa-solid fa-sheet-plastic fa-7x"></i></div>
+            <div class="recycle-stat-2"><i class="fa-solid fa-box-open fa-7x"></i> {{ cardboard_recycle_count }} users have recycled their cardboard packaging!</div>
+            <div class="recycle-stat-3">{{ glass_recycle_count }} users have recycled their glass bottles and containers! <i class="fa-solid fa-champagne-glasses fa-5x"></i></div>
+            <div class="recycle-stat-4"><i class="fa-solid fa-toolbox fa-5x"></i> {{ metal_recycle_count }} users have recycled their metal junk!</div>
+            <div class="recycle-stat-5">{{ electronics_recycle_count }} users have recycled their old electronics! <i class="fa-solid fa-headphones-simple fa-3x"></i></div>
+            <div class="recycle-stat-6"><i class="fa-solid fa-plant-wilt fa-3x"></i> {{ organic_waste_recycle_count }} users have recycled their organic waste!</div>
+        </div>
+    </div>
 </div>
-<h1 class="align-self-center">Ahoy EaRRRth!</h1>
-<a href="{% url 'profile' %}">EaRRRth Profile</a>
-
 {% endblock %}
