@@ -13,13 +13,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- Font awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+    integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous" />
   <!-- HOVER CSS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
-  integrity="sha512-SJw7jzjMYJhsEnN/BuxTWXkezA2cRanuB8TdCNMXFJjxG9ZGSKOX5P3j03H6kdMxalKHZ7vlBMB4CagFP/de0A=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-SJw7jzjMYJhsEnN/BuxTWXkezA2cRanuB8TdCNMXFJjxG9ZGSKOX5P3j03H6kdMxalKHZ7vlBMB4CagFP/de0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Custom CSS -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   {% endblock %}
@@ -36,40 +35,47 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark main-green-bg">
     <div class="container-fluid">
-        <a class="navbar-brand train-font contrast-font" id="navbar-logo" href="{% url 'home' %}">
+      <a class="navbar-brand train-font contrast-font" id="navbar-logo" href="{% url 'home' %}">
         <i class="fa-solid fa-earth-europe logo-icon"></i>Ea<span class="text-uppercase">rrr</span>th</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#earth-navbar"
-            aria-controls="earth-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#earth-navbar"
+        aria-controls="earth-navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="earth-navbar">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mont-font">
-                <li class="nav-item">
-                    <a class="nav-link contrast-font hvr-underline-from-left" aria-current="page" href="{% url 'home' %}"><i class="fa-solid fa-house"></i> Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'contribute' %}"><i class="fa-solid fa-leaf"></i> Contribute</a>
-                </li>
-                {% if user.is_authenticated %}
-                  <li class="nav-item">
-                    <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i> My Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'account_logout' %}"><i class="fa-solid fa-door-open"></i> Sign Out</a>
-                  </li>
-                {% else %}
-                  <li class="nav-item dropdown">
-                    <a class="nav-link contrast-font dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-user"></i> Profile
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="{% url 'account_login' %}"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</a></li>
-                      <li><a class="dropdown-item" href="{% url 'account_signup' %}"><i class="fa-solid fa-list"></i> Register</a></li>
-                    </ul>
-                  </li>
-                {% endif %}
+      </button>
+      <div class="collapse navbar-collapse" id="earth-navbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mont-font">
+          <li class="nav-item">
+            <a class="nav-link contrast-font hvr-underline-from-left" aria-current="page" href="{% url 'home' %}"><i
+                class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'contribute' %}"><i
+                class="fa-solid fa-leaf"></i> Contribute</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'profile' %}"><i
+                class="fa-solid fa-user"></i> My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'account_logout' %}"><i
+                class="fa-solid fa-door-open"></i> Sign Out</a>
+          </li>
+          {% else %}
+          <li class="nav-item dropdown">
+            <a class="nav-link contrast-font dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i> Profile
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'account_login' %}"><i
+                    class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</a></li>
+              <li><a class="dropdown-item" href="{% url 'account_signup' %}"><i class="fa-solid fa-list"></i>
+                  Register</a></li>
             </ul>
-        </div>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
   </nav>
   <div class="container-fluid main-content lower-contrast-bg">

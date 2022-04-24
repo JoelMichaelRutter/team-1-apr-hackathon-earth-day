@@ -151,7 +151,7 @@
 }
 
 /* rounds reuse grid block corners */
-.reuse-parent .reuse-stat-1 {
+/* .reuse-parent .reuse-stat-1 {
     border-top-left-radius: 5px;
 }
 
@@ -165,11 +165,10 @@
 
 .reuse-parent .reuse-stat-6 {
     border-bottom-right-radius: 5px;
-}
+} */
 
 /* applies border, font weight and text alignment to all reuse grid cells */
 .reuse-parent > div {
-    border: 1px solid #376c4a;
     text-align: center;
     font-weight: 600;
 }
@@ -181,19 +180,19 @@
 }
 .reuse-stat-2 {
     grid-area: 1 / 3 / 4 / 5;
-    background-color: #c4fed4;
+    background-color: #00C9DE;
 }
 .reuse-stat-3 { 
     grid-area: 4 / 1 / 6 / 3;
-    background-color: #c4fed4;
+    background-color: #008291;
 }
 .reuse-stat-4 {
     grid-area: 4 / 3 / 6 / 5;
-    background-color: #498E61;
+    background-color: #1D1D35;
 }
 .reuse-stat-5 {
     grid-area: 1 / 5 / 4 / 6;
-    background-color: #c4fed4;
+    background-color: #DEB887;
 }
 .reuse-stat-6 {
     grid-area: 4 / 5 / 6 / 6;
@@ -210,7 +209,7 @@
     height: 450px;
 }
 /* rounds reduce grid block corners */
-.reduce-parent .reduce-stat-3 {
+/* .reduce-parent .reduce-stat-3 {
     border-top-left-radius: 5px;
 }
 .reduce-parent .reduce-stat-5 {
@@ -221,42 +220,41 @@
 }
 .reduce-parent .reduce-stat-1 {
     border-bottom-right-radius: 5px;
-}
+} */
 
 /* applies border, font weight and text alignment to all reduce grid cells */
 .reduce-parent > div {
-    border: 1px solid #376c4a;
     text-align: center;
     font-weight: 600;
 }
     
 .reduce-stat-1 {
     grid-area: 3 / 4 / 6 / 6;
-    background-color: #498E61;
+    background-color: #008BB7;
 }
 .reduce-stat-2 {
     grid-area: 3 / 2 / 6 / 4;
-    background-color: #498E61;
+    background-color: #FDE181;
 }
 
 .reduce-stat-3 { 
     grid-area: 1 / 1 / 3 / 3;
-    background-color: #c4fed4;
+    background-color: #005D66;
 }
 
 .reduce-stat-4 {
     grid-area: 1 / 3 / 3 / 5;
-    background-color: #c4fed4;
+    background-color: #008584;
 }
 
 .reduce-stat-5 {
     grid-area: 3 / 1 / 6 / 2;
-    background-color: #c4fed4;
+    background-color: #008878;
 }
 
 .reduce-stat-6 {
     grid-area: 1 / 5 / 3 / 6;
-    background-color: #c4fed4;
+    background-color: #CA6056;
 }
 
 .recycle-parent {
@@ -267,8 +265,9 @@
     grid-row-gap: 0px;
     height: 450px;
 }
+
 /* rounds recycle grid block corners */
-.recycle-parent .recycle-stat-2 {
+/* .recycle-parent .recycle-stat-2 {
     border-top-left-radius: 5px;
 }
 
@@ -282,42 +281,57 @@
 
 .recycle-parent .recycle-stat-6 {
     border-bottom-right-radius: 5px;
-}
+} */
 
 /* applies border, font weight and text alignment to all reuse grid cells */
 .recycle-parent > div {
-    border: 1px solid #376c4a;
     text-align: center;
     font-weight: 600;
 }
 
 .recycle-stat-1 {
     grid-area: 4 / 1 / 6 / 4;
-    background-color: #c4fed4;
+    background-color: #C3AA4D;
 }
 .recycle-stat-2 {
     grid-area: 1 / 1 / 4 / 3;
-    background-color: #498E61;
+    background-color: #9EB0A2;
 }
 
 .recycle-stat-3 { 
     grid-area: 1 / 4 / 4 / 6;
-    background-color: #498E61;
+    background-color: #288C67;
 }
 
 .recycle-stat-4 {
     grid-area: 1 / 3 / 4 / 4;
-    background-color: #c4fed4;
+    background-color: #547900;
 }
 
 .recycle-stat-5 {
     grid-area: 4 / 4 / 6 / 5;
-    background-color: #c4fed4;
+    background-color: #005D66;
 }
 
 .recycle-stat-6 {
     grid-area: 4 / 5 / 6 / 6;
     background-color: #498E61;
+}
+
+.large-icon {
+    font-size: 9vmin;
+}
+
+.medium-icon {
+    font-size: 6vmin;
+}
+
+.small-icon {
+    font-size: 5vmin;
+}
+
+.action-description {
+    max-width: 90%;
 }
 
 /* ALL AUTH TEMPLATE STYLINGS */
