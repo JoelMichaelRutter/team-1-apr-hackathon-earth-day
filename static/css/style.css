@@ -263,6 +263,22 @@
     height: 450px;
 }
 
+.recycle-parent .recycle-stat-2 {
+    border-top-left-radius: 5px;
+}
+
+.recycle-parent .recycle-stat-1 {
+    border-bottom-left-radius: 5px;
+}
+
+.recycle-parent .recycle-stat-3 {
+    border-top-right-radius: 5px;
+}
+
+.recycle-parent .recycle-stat-6 {
+    border-bottom-right-radius: 5px;
+}
+
 /* applies border, font weight and text alignment to all reuse grid cells */
 .recycle-parent > div {
     border: 1px solid #376c4a;
