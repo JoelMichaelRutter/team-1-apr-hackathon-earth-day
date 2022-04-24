@@ -352,3 +352,31 @@
 .custom-danger-button {
     background-color: #8a7618;
 }
+
+.community-column-reuse {
+    background-color: #498e61;
+    padding: 10px 0;
+    color: #ebebeb;
+}
+
+.community-column-reduce {
+    background-color: #6e8e49;
+    padding: 10px 0;
+    color: #ebebeb;
+}
+
+.community-column-recycle {
+    background-color: #fde081;
+    color: #000;
+    padding: 10px 0;
+}
+
+.contribution-card-container {
+    height: 500px;
+    overflow: auto;
+}
+
+.cont-card {
+    width: 90%;
+    margin: 0 auto;
+}

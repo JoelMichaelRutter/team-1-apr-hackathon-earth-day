@@ -20,13 +20,13 @@
                             mother earth!
                         </p>
                         <div>
-                            <p class="mont-font-bold"><i class="fa-solid fa-arrow-rotate-left fa-2xl me-2"></i> {{ reuse_count }} of our users have completed reuse actions!</p>
+                            <p class="mont-font-bold"><i class="fa-solid fa-arrow-rotate-left fa-2xl me-2"></i> {{ reuse_count }} reuse contributions in total!</p>
                         </div>
                         <div>
-                            <p class="mont-font-bold"><i class="fa-solid fa-circle-arrow-down fa-2xl me-2"></i> {{ reduce_count }} of our users have completed reduce actions!</p>
+                            <p class="mont-font-bold"><i class="fa-solid fa-circle-arrow-down fa-2xl me-2"></i> {{ reduce_count }} reduce contributions in total!</p>
                         </div>
                         <div>
-                            <p class="mont-font-bold"><i class="fa-solid fa-recycle fa-2xl me-2"></i> {{ recycle_count }} of our users have completed recycle actions!</p>
+                            <p class="mont-font-bold"><i class="fa-solid fa-recycle fa-2xl me-2"></i> {{ recycle_count }} recycle contributions in total!</p>
                         </div>
                     </section>
                 </div>
@@ -94,10 +94,58 @@
         </div>
     </div>
 </div>
-<div class="row">
+<!-- COMMUNITY CONTRIBUTIONS COLUMNS -->
+<div class="row g-0 mt-3">
+    <div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0 no-gutters">
+        <h3 class="train-font text-center community-column-reuse ">Reuse Contributions</h3>
+        <div class="contribution-card-container">
+            {% for action in reuse_actions %}
+                <div class="card cont-card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title mont-font-bold"><i class="fa-solid fa-earth-europe"></i> EaRRRth Action</h5>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font-bold"><i class="fa-solid fa-arrow-rotate-left"></i> {{ action }} -> {{ action.reuse_action }}</h6>
+                        <p class="card-text mont-font">{{ action.reuse_description }}</p>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font">Contributer: {{ action.profile }}</h6>
+                        <p class="card-text mont-font">Contribution date: {{ action.date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 
-    <div class="col-12 d-flex justify-content-center align-items-center remove-padding flex-column">
-        <h1>Total recycle actions taken so far: {{ recycle_count }}</h1>
+    </div>
+    <div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0 align-items-center">
+        <h3 class="train-font text-center community-column-reduce">Reduce Contributions</h3>
+        <div class="contribution-card-container">
+            {% for action in reduce_actions %}
+                <div class="card cont-card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title mont-font-bold"><i class="fa-solid fa-earth-europe"></i> EaRRRth Action</h5>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font-bold"><i class="fa-solid fa-circle-arrow-down"></i> {{ action }} -> {{ action.reduce_action }}</h6>
+                        <p class="card-text mont-font">{{ action.reduce_description }}</p>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font">Contributer: {{ action.profile }}</h6>
+                        <p class="card-text mont-font">Contribution date: {{ action.date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0">
+        <h3 class="train-font text-center community-column-recycle">Recycle Contributions</h3>
+        <div class="contribution-card-container">
+            {% for action in recycle_actions %}
+                <div class="card cont-card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title mont-font-bold"><i class="fa-solid fa-earth-europe"></i> EaRRRth Action</h5>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font-bold"><i class="fa-solid fa-recycle"></i> {{ action }} -> {{ action.recycle_action }}</h6>
+                        <p class="card-text mont-font">{{ action.recycle_description }}</p>
+                        <h6 class="card-subtitle mb-2 text-muted mont-font">Contributer: {{ action.profile }}</h6>
+                        <p class="card-text mont-font">Contribution date: {{ action.date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center remove-padding flex-column">
         {% for x in recycle_actions %}
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -139,7 +187,7 @@
         </div>
 
         {% endfor %}
-    </div>
+    </div> -->
 </div>
 {% endblock %}
 
