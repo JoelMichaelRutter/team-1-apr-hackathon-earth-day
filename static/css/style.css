@@ -209,7 +209,7 @@
     grid-row-gap: 0px;
     height: 450px;
 }
-
+/* rounds reduce grid block corners */
 .reduce-parent .reduce-stat-3 {
     border-top-left-radius: 5px;
 }
@@ -267,7 +267,7 @@
     grid-row-gap: 0px;
     height: 450px;
 }
-
+/* rounds recycle grid block corners */
 .recycle-parent .recycle-stat-2 {
     border-top-left-radius: 5px;
 }

@@ -70,7 +70,7 @@ def actions_context(request):
         'meat_intake_count': meat_intake,
         # Recycle specific action count context variables
         'plastic_recycle_count': plastics,
-        'carboard_recycle_count': cardboard,
+        'cardboard_recycle_count': cardboard,
         'glass_recycle_count': glass,
         'metal_recycle_count': metal,
         'electronics_recycle_count': electronics,
