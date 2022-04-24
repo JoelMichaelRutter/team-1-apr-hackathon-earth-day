@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="train-font">
+                <i class="fas fa-exclamation-triangle fa-beat-fade mt-5"></i> Error 404!
+            </h1>
+            <h3 class="mont-font-bold">
+                We're really sorry, but we can't find what you're looking for.
+            </h3>
+            <a href="{% url 'home' %}" class="text-decoration-none mt-5">
+                <h4 class="mont-font-bold main-green-font hvr-grow mt-4">
+                    Let's get you home! <i class="fa-solid fa-house"></i>
+                </h4>
+            </a>
+            
+        </div>
+    </div>
+{% endblock %}

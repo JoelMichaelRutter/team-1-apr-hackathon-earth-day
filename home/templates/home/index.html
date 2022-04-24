@@ -34,36 +34,198 @@
 
 <div class="row">
     <!-- REUSE STAT COLUMN -->
-    <div class="col-12 col-md-6 col-lg-4 mt-2 mb-1">
+    <div class="col-12 col-md-6 col-lg-4">
         <div class="reuse-parent">
-            <div class="reuse-stat-1">{{ coffee_cups_count }} users have reused their coffee cups! <i class="fa-solid fa-mug-hot fa-7x"></i></div>
-            <div class="reuse-stat-2"><i class="fa-solid fa-bottle-water fa-7x"></i> {{ water_bottles_count }} users have reused their water bottles!</div>
-            <div class="reuse-stat-3">{{ shopping_bags_count }} users have reused their shopping bags! <i class="fa-solid fa-bag-shopping fa-5x"></i></div>
-            <div class="reuse-stat-4"><i class="fa-solid fa-shirt fa-5x"></i> {{ clothes_count }} users have reused their old clothes!</div>
-            <div class="reuse-stat-5">{{ furniture_count }} users have reused their old furniture! <i class="fa-solid fa-chair fa-3x"></i></div>
-            <div class="reuse-stat-6"><i class="fa-solid fa-jar fa-3x"></i> {{ glass_containers_count }} users have reused their glass containers!</div>
+            <!-- Coffee cups container -->
+            <div class="reuse-stat-1 d-flex align-items-center justify-content-center contrast-font ">
+                <div class="inner-grid">
+                    <div>
+                        <i class="fa-solid fa-mug-hot large-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-2">{{ coffee_cups_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center">eco warriors have reused their coffee cups!</span>
+                </div>
+            </div>
+            <!-- Water bottles container -->
+            <div class="reuse-stat-2 d-flex align-items-center justify-content-center contrast-font ">
+                <div class="inner-grid">
+                    <div>
+                        <i class="fa-solid fa-bottle-water large-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-2">{{ water_bottles_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center">earth friends have reused water bottles!</span>
+                </div>
+            </div>
+            <!-- Shopping Bags container -->
+            <div class="reuse-stat-3 d-flex align-items-center justify-content-center contrast-font ">
+                <div class="inner-grid">
+                    <div>
+                        <i class="fa-solid fa-bag-shopping small-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-2">{{ shopping_bags_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6"> reused their shopping bags.</span>
+                </div>
+            </div>
+            <!-- Clothes container -->
+            <div class="reuse-stat-4 d-flex align-items-center justify-content-center contrast-font ">
+                <div class="inner-grid">
+                    <div>
+                        <i class="fa-solid fa-shirt large-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-2">{{ clothes_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center">users reused old clothes.</span>
+                </div>
+            </div>
+            <!-- Furniture container -->
+            <div class="reuse-stat-5 d-flex align-items-center justify-content-center">
+                <div class="inner-grid">
+                    <span class="action-count mont-font-bold fs-2">{{ furniture_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center">users repurposed old furniture.</span>
+                    <div class="mt-3">
+                        <i class="fa-solid fa-couch medium-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Glass Containers container -->
+            <div class="reuse-stat-6 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font ">
+                    <div class="mt-3">
+                        <i class="fa-solid fa-jar small-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ glass_containers_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">of our users reused glass containers.</span>
+                </div>
+            </div>
         </div>
     </div>
     <!-- REDUCE STAT COLUMN -->
-    <div class="col-12 col-md-6 col-lg-4 mt-2 mb-1">
+    <div class="col-12 col-md-6 col-lg-4">
         <div class="reduce-parent">
-            <div class="reduce-stat-1">{{ water_usage_count }} users have reduced their water usage! <i class="fa-solid fa-faucet-drip fa-7x"></i></div>
-            <div class="reduce-stat-2"><i class="fa-solid fa-car fa-7x"></i> {{ car_emissions_count }} users have reduced their car emissions!</div>
-            <div class="reduce-stat-3">{{ electricity_usage_count }} users have reduced their electricity usage! <i class="fa-solid fa-plug-circle-bolt fa-5x"></i></div>
-            <div class="reduce-stat-4"><i class="fa-solid fa-fire-flame-simple fa-5x"></i> {{ natural_gas_usage_count }} users have reduced their gas usage!</div>
-            <div class="reduce-stat-5">{{ food_waste_count }} users have reduced their food waste! <i class="fa-solid fa-carrot fa-3x"></i></div>
-            <div class="reduce-stat-6"><i class="fa-solid fa-drumstick-bite fa-3x"></i> {{ meat_intake_count }} users have reduced their meat intake!</div>
+            <!-- Water usage container -->
+            <div class="reduce-stat-1 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font ">
+                    <div class="mt-3">
+                        <i class="fa-solid fa-faucet-drip large-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ water_usage_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users reduced their water usage.</span>
+                </div>
+            </div>
+            <!-- Car Emissions container -->
+            <div class="reduce-stat-2 d-flex align-items-center justify-content-center">
+                <div class="inner-grid">
+                    <div class="mt-3">
+                        <i class="fa-solid fa-car large-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ water_usage_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users reduced their car emissions.</span>
+                </div>
+            </div>
+            <!-- Electricity usage container -->
+            <div class="reduce-stat-3 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font">
+                    <span class="action-count mont-font-bold fs-5">{{ electricity_usage_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users reduced their electricity usage!</span>
+                    <div class="mt-3">
+                        <i class="fa-solid fa-bolt medium-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Natural gas usage container -->
+            <div class="reduce-stat-4 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font">
+                    <span class="action-count mont-font-bold fs-5">{{ natural_gas_usage_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users reduced their consumption of natural gas.</span>
+                    <div class="mt-3">
+                        <i class="fa-solid fa-temperature-arrow-down medium-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Food waste container -->
+            <div class="reduce-stat-5 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font">
+                    <span class="action-count mont-font-bold fs-5">{{ food_waste_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users reduced their food waste.</span>
+                    <div class="mt-3">
+                        <i class="fa-solid fa-trash-can medium-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Meat intake container -->
+            <div class="reduce-stat-6 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font">
+                    <div class="mt-3">
+                        <i class="fa-solid fa-drumstick-bite medium-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ meat_intake_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users ate less meat.</span>
+                </div>
+            </div>
         </div>
     </div>
     <!-- RECYCLE STAT COLUMN -->
-    <div class="col-12 col-md-6 col-lg-4 mt-2 mb-1">
+    <div class="col-12 col-md-12 col-lg-4">
         <div class="recycle-parent">
-            <div class="recycle-stat-1">{{ plastic_recycle_count }} users have recycled their plastic waste!<i class="fa-solid fa-sheet-plastic fa-7x"></i></div>
-            <div class="recycle-stat-2"><i class="fa-solid fa-box-open fa-7x"></i> {{ cardboard_recycle_count }} users have recycled their cardboard packaging!</div>
-            <div class="recycle-stat-3">{{ glass_recycle_count }} users have recycled their glass bottles and containers! <i class="fa-solid fa-champagne-glasses fa-5x"></i></div>
-            <div class="recycle-stat-4"><i class="fa-solid fa-toolbox fa-5x"></i> {{ metal_recycle_count }} users have recycled their metal junk!</div>
-            <div class="recycle-stat-5">{{ electronics_recycle_count }} users have recycled their old electronics! <i class="fa-solid fa-headphones-simple fa-3x"></i></div>
-            <div class="recycle-stat-6"><i class="fa-solid fa-plant-wilt fa-3x"></i> {{ organic_waste_recycle_count }} users have recycled their organic waste!</div>
+            <!-- Plastic Recycle -->
+            <div class="recycle-stat-1 d-flex align-items-center justify-content-center">
+                <div class="inner-grid">
+                    <div class="mt-3">
+                        <i i class="fa-solid fa-sheet-plastic large-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ plastic_recycle_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users have recycled their plastics.</span>
+                </div>
+            </div>
+            <!-- Cardboard Recycle -->
+            <div class="recycle-stat-2 d-flex align-items-center justify-content-center">
+                <div class="inner-grid">
+                    <div class="mt-3">
+                        <i i class="fa-solid fa-box-open large-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ cardboard_recycle_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users recycled their cardboard.</span>
+                </div>
+            </div>
+            <!-- Glass Recycle -->
+            <div class="recycle-stat-3 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font">
+                    <div class="mt-3">
+                        <i i class="fa-solid fa-champagne-glasses large-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ glass_recycle_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users have recycled their glass bottles and containers!</span>
+                </div>
+            </div>
+            <!-- Metal Recycle -->
+            <div class="recycle-stat-4 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font">
+                    <div class="mt-3">
+                        <i class="fa-solid fa-anchor medium-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ metal_recycle_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users have recycled their metal junk!</span>
+                </div>
+            </div>
+            <!-- Electronics Recycle -->
+            <div class="recycle-stat-5 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font">
+                    <div class="mt-3">
+                        <i class="fa-solid fa-mobile-screen-button medium-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ electronics_recycle_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users recycled electricals!</span>
+                </div>
+            </div>
+            <!-- Organic Recycle -->
+            <div class="recycle-stat-6 d-flex align-items-center justify-content-center">
+                <div class="inner-grid contrast-font">
+                    <div class="mt-3">
+                        <i class="fa-brands fa-pagelines medium-icon"></i>
+                    </div>
+                    <span class="action-count mont-font-bold fs-5">{{ organic_waste_recycle_count }}</span> 
+                    <span class="mont-font-bold w-75 text-center fs-6">users recycled organic waste!</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
