@@ -1,14 +1,17 @@
 {% extends "base.html" %} 
 
-{% load static %} 
+{% load static %}
+{% load cloudinary %}
 {% block page_header %}
 
 {% endblock %}
 
 {% block content %}
 <div class="row">
-    <div class="col-12 d-flex justify-content-center align-items-center">
+    <div class="col-12 d-flex justify-content-center align-items-center flex-column">
         <h1 class="align-self-center">Ahoy Earrrth Profile!</h1>
+        <p>{{ user_profile }}</p>
+        {% cloudinary user_profile.image.url width=100 height=100 %}
     </div>
 </div>
 {% endblock %}
