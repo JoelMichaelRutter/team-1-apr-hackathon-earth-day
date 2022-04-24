@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .models import Recycle, Reduce, Reuse
 from .forms import RecycleForm, ReduceForm, ReuseForm
@@ -32,6 +33,13 @@ def add_recycle(request):
             recycle = form.save(commit=False)
             recycle.profile = request.user
             recycle.save()
+            # set custom toast/message level
+            recycle_lvl = 50
+            messages.add_message(
+                request,
+                recycle_lvl,
+                f'Hail EaRRRth hero, your {recycle} -> {recycle.recycle_action} action has been saved'  # noqa ES501
+            )
             return redirect(reverse('home'))
     recycle_form = RecycleForm()
     reuse_form = ReuseForm()
@@ -59,6 +67,13 @@ def add_reduce(request):
             reduce = form.save(commit=False)
             reduce.profile = request.user
             reduce.save()
+            # set custom toast/message level
+            reduce_lvl = 60
+            messages.add_message(
+                request,
+                reduce_lvl,
+                f'Hail EaRRRth hero, your {reduce} -> {reduce.reduce_action} action has been saved'  # noqa ES501
+            )
             return redirect(reverse('home'))
     recycle_form = RecycleForm()
     reuse_form = ReuseForm()
@@ -86,6 +101,13 @@ def add_reuse(request):
             reuse = form.save(commit=False)
             reuse.profile = request.user
             reuse.save()
+            # set custom toast/message level
+            reuse_lvl = 70
+            messages.add_message(
+                request,
+                reuse_lvl,
+                f'Hail EaRRRth hero, your {reuse} -> {reuse.reuse_action} action has been saved'  # noqa ES501
+            )
             return redirect(reverse('home'))
     recycle_form = RecycleForm()
     reuse_form = ReuseForm()

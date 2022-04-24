@@ -72,11 +72,78 @@
         </div>
     </div>
   </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="message-container toast-container position-absolute d-flex flex-column align-items-end w-100 mt-5 p-3 top-0" id="toastPlacement">
+          {% if messages %}
+          
+              {% for message in messages %} 
+              {% with message.level as level %}
+              {% if level == 70 %}
+              {% include 'includes/toasts/toast_reuse.html' %}
+              {% elif level == 60 %}
+              {% include 'includes/toasts/toast_reduce.html' %}
+              {% elif level == 50 %}
+                {% include 'includes/toasts/toast_recycle.html' %}
+              {% elif level == 40 %}
+                  {% include 'includes/toasts/toast_error.html' %} 
+              {% elif level == 30 %} 
+                  {% include 'includes/toasts/toast_warning.html' %} 
+              {% elif level == 20 %} 
+                  {% include 'includes/toasts/toast_info.html' %} 
+              {% else %} 
+                  {% include 'includes/toasts/toast_success.html' %} 
+              {% endif %}
+              {% endwith %} 
+              {% endfor %}
+          
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid main-content lower-contrast-bg">
     {% block content %}
     {%endblock %}
   </div>
+  <div class="container-fluid g-0">
+    <div class="row">
+      <div class="col">
+        <a target="_blank" href="https://icons8.com/icon/etI9YDHUW4ry/eco" style="font-size: .2vmin; min-width: 100%;">Eco</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+      </div>
+    </div>
+  </div>
   {% block postloadjs %}
+  <script>
+
+    const main = {
+      // Remove any toast elements
+      remove: () => {
+        let toasts = document.querySelectorAll('.toast');
+        toasts.forEach(el => el.remove())
+      }
+    }
+    // bootstrap toast
+    const options = {
+      autohide: true,
+      delay: 6500
+    }
+
+    window.onload = (event) => {
+      var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+      var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl, options).show()
+      })
+
+      // call remove() every 6.5 seconds
+      setInterval(() => {
+        main.remove()
+        }, 6500)
+
+    }
+
+  </script>
   {% endblock %}
 </body>
 
