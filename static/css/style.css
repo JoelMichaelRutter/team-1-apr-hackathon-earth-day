@@ -94,7 +94,7 @@
     left: 0;
     right: 100%;
     bottom: 0;
-    background: #f1fcf493;
+    background: #d7d7d7;
     height: 2px;
     -webkit-transition-property: right;
     transition-property: right;
@@ -111,13 +111,15 @@
 }
 
 /* INDEX.HTML STYLINGS --------------------------------- */
+
+
 .home-hero-image {
     background-image: url('/media/images/home-hero-optimised.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
-    height: 500px;
+    height: 75vh;
     width: 100%;
 }
 
@@ -135,8 +137,6 @@
 .asteriskField {
     display: none;
 }
-
-/* stats grids */
 
 /* stats grids */
 

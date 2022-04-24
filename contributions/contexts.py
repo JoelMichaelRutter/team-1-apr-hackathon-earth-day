@@ -8,7 +8,7 @@ def actions_context(request):
     """
     Make action objects count available across app
     """
-    
+
     recycle_objects = Recycle.objects.all()
     reuse_objects = Reuse.objects.all()
     reduce_objects = Reduce.objects.all()
@@ -70,7 +70,7 @@ def actions_context(request):
         'meat_intake_count': meat_intake,
         # Recycle specific action count context variables
         'plastic_recycle_count': plastics,
-        'carboard_recycle_count': cardboard,
+        'cardboard_recycle_count': cardboard,
         'glass_recycle_count': glass,
         'metal_recycle_count': metal,
         'electronics_recycle_count': electronics,
