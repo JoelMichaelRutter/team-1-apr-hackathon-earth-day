@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block content %}
-<div class="row">
+<div class="row g-0">
     <div class="col-12 d-flex justify-content-center align-items-center remove-padding">
         <div class="contributions-hero-image">
-            <div class="row">
+            <div class="row g-0">
                 <div class="col-10 offset-1 col-md-6 offset-md-1 col-lg-5 offset-lg-1">
                     <section class="about-section contrast-font mt-5">
                         <h3 class="train-font">EaRRRth Actions</h3>
@@ -62,7 +62,7 @@
                         {{ reuse_form|crispy }}
                         <span class="text-off-white" id="image-text"></span>
                         <div class="text-right">
-                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1 contrast-font mont-font-bold hvr-grow-shadow"><i class="fa-solid fa-xmark"></i> Cancel</a>
+                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1 contrast-font mont-font-bold hvr-grow-shadow"><i class="fa-solid fa-xmark"></i> Reset</a>
                             <button class="btn btn-black main-green-bg contrast-font mont-font-bold hvr-grow-shadow rounded-1 ms-4" type="submit" id="reuse_submit"><i class="fa-solid fa-circle-check"></i> Submit Contribution</button>
                         </div>
                     </form>
@@ -73,7 +73,7 @@
                         {{ reduce_form|crispy }}
                         <span class="text-off-white" id="image-text"></span>
                         <div class="text-right">
-                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1"><i class="fa-solid fa-xmark"></i>Cancel</a>
+                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1"><i class="fa-solid fa-xmark"></i> Reset</a>
                                 <button class="btn btn-black main-green-bg contrast-font mont-font-bold hvr-grow-shadow rounded-1 ms-4" type="submit" id="reduce_submit"><i class="fa-solid fa-circle-check"></i> Submit Contribution</button>
                         </div>
                     </form>
@@ -85,7 +85,7 @@
                         {{ recycle_form|crispy }}
                         <span class="text-off-white" id="image-text"></span>
                         <div class="text-right">
-                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1"><i class="fa-solid fa-xmark"></i>Cancel</a>
+                            <button type="reset" class="btn custom-danger-button btn-outline-black rounded-1"><i class="fa-solid fa-xmark"></i>Reset</a>
                             <button class="btn btn-black main-green-bg contrast-font mont-font-bold hvr-grow-shadow rounded-1 ms-4" type="submit" id="recycle_submit"><i class="fa-solid fa-circle-check"></i> Submit Contribution</button>
                         </div>
                     </form>
