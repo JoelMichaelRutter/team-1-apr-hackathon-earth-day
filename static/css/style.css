@@ -69,6 +69,10 @@ ul.nav.nav-tabs {
     background-color: #F1FCF4;
 }
 
+.contrast-dark-bg {
+    background-color: #1D1D35;
+}
+
 .contrast-font {
     color: #F1FCF4!important;
 }
