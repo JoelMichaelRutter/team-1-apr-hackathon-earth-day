@@ -9,9 +9,72 @@
 {% endblock %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+        </div>
+        <div class="col-9 d-flex justify-content-center align-items-center border">
+            <h1 class="align-self-center">Welcome <span>{{ user_profile }}</span></h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-3 d-flex align-items-center justify-content-center">
+            <img src="{{ MEDIA_URL }}icons/icons8_ecosystem.png" class="rounded me-2 end-0" alt="default profile avatar" style="height:6vmin; width:6vmin; border-radius: 50%; border: solid 1px grey;">
+
+        </div>
+        <div class="col-9 text-center border align-bottom">
+            <h1 class="align-self-center">My <span class="train-font">EaRRRth</span> actions</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-3 d-flex">
+        </div>
+        <div class="col-9">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li id="reuse-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
+                    <button class="nav-link train-font reuse-profile " id="reuse-tab" data-bs-toggle="tab" data-bs-target="#reuse"
+                        type="button" role="tab" aria-controls="reuse" aria-selected="true">Reuse</button>
+                </li>
+                <li id="reduce-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
+                    <button class="nav-link train-font reduce-profile" id="reduce-tab" data-bs-toggle="tab" data-bs-target="#reduce"
+                        type="button" role="tab" aria-controls="reduce" aria-selected="false">Reduce</button>
+                </li>
+                <li id="recycle-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
+                    <button class="nav-link train-font recycle-profile" id="recycle-tab" data-bs-toggle="tab" data-bs-target="#recycle"
+                        type="button" role="tab" aria-controls="recycle" aria-selected="false">Recycle</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active d-flex flex-row" id="reuse" role="tabpanel" aria-labelledby="reuse-tab">
+                {% for contribution in user_reuse_contributions %}
+                    <div class="card" style="width: 25%;">
+                        <div class="card-body">
+                        <h5 class="card-subtitle mb-2 text-muted">{{ contribution }} -> {{ contribution.reuse_action }}</h5>
+                        <p class="card-text">{{ contribution.reuse_description }}</p>
+                        on: {{ contribution.date }}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="reduce" role="tabpanel" aria-labelledby="reduce-tab">
+                {% for contribution in user_reduce_contributions %}
+                    {{ contribution.reduce_description }}
+                {% endfor %}
+                </div>
+                <div class="tab-pane fade recycle-profile" id="recycle" role="tabpanel" aria-labelledby="recycle-tab">
+                {% for contribution in user_recycle_contributions %}
+                    {{ contribution.recycle_description }}
+                {% endfor %}
+                </div>
+            </div>
+        </div>
 <div class="row">
     <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-        <span>{{ user_profile }}</span>
+        
         <img src="{{ user_profile.image.url }}" alt="{{ user_profile }}'s avatar" style="height: 100px; width: 100px">
         <span>Customize your profile by uploading an avatar!</span>
         <span>Your avatar cannot be larger than 300px by 300px</span>
