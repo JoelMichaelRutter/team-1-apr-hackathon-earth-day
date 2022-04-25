@@ -362,7 +362,7 @@
 /* --------------CONTRIBUTIONS PAGE STYLING -------------------- */ 
 
 .contributions-hero-image {
-    background-image: url('../images/contributions-hero-optimised.jpg');
+    background-image: url('https://res.cloudinary.com/earrrth/image/upload/v1650845434/static/images/contributions-hero-optimised.60b713972911.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
