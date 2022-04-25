@@ -117,7 +117,7 @@
 
 
 .home-hero-image {
-    background-image: url('/media/images/home-hero-optimised.jpg');
+    background-image: url('/static/images/home-hero-optimised.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -339,7 +339,7 @@
 
 /* ALL AUTH TEMPLATE STYLINGS */
 .account-hero-image {
-    background-image: url('/media/images/account-hero-optimised.jpg');
+    background-image: url('/static/images/account-hero-optimised.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -362,7 +362,7 @@
 /* --------------CONTRIBUTIONS PAGE STYLING -------------------- */ 
 
 .contributions-hero-image {
-    background-image: url('/media/images/contributions-hero-optimised.jpg');
+    background-image: url('/static/images/contributions-hero-optimised.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
