@@ -9,32 +9,37 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-3">
+<div class="container g-0 d-flex justify-content-center flex-column pt-5">
+    <div class="row g-0">
+        <div class="col-3 d-flex align-items-center justify-content-center p-3">
+            <img src="https://res.cloudinary.com/earrrth/image/upload/v1650846394/static/images/icons/icons8_reduce.ceb47e39c320.png" class="rounded me-2 end-0" alt="default profile avatar" style="height:6vmin; width:6vmin; border-radius: 50%; border: solid 1px grey;">
         </div>
-        <div class="col-9 d-flex justify-content-center align-items-center border">
+        <div class="col-9 d-flex justify-content-center align-items-center p-3 profile-header">
             <h1 class="align-self-center">Welcome <span>{{ user_profile }}</span></h1>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3 d-flex align-items-center justify-content-center">
-            <img src="{{ MEDIA_URL }}icons/icons8_ecosystem.png" class="rounded me-2 end-0" alt="default profile avatar" style="height:6vmin; width:6vmin; border-radius: 50%; border: solid 1px grey;">
-
+    
+    <div class="row g-0">
+        <div class="col-3 d-flex justify-content-center p-3">
+            <div>
+                <ul>
+                    <li>reuse: {{ reuse_count }}</li>
+                    <li>reduce: {{ reduce_count }}</li>
+                    <li>recycle: {{ recycle_count }}</li>
+                </ul>
+            </div>
         </div>
-        <div class="col-9 text-center border align-bottom">
-            <h1 class="align-self-center">My <span class="train-font">EaRRRth</span> actions</h1>
+        <div class="col-9 text-center align-bottom p-3 profile-header">
+            <h2 class="align-self-center">See all your <span class="train-font">EaRRRth</span> actions</h2>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-3 d-flex">
+    
+    
+    <div class="row justify-content-md-center g-0">
+        <div class="col-3 d-flex justify-content-center p-3">
         </div>
         <div class="col-9">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs profile-tabs" id="myTab" role="tablist">
                 <li id="reuse-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
                     <button class="nav-link train-font reuse-profile " id="reuse-tab" data-bs-toggle="tab" data-bs-target="#reuse"
                         type="button" role="tab" aria-controls="reuse" aria-selected="true">Reuse</button>
@@ -49,9 +54,10 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active d-flex flex-row" id="reuse" role="tabpanel" aria-labelledby="reuse-tab">
-                {% for contribution in user_reuse_contributions %}
-                    <div class="card" style="width: 25%;">
+                <div class="tab-pane fade show active" id="reuse" role="tabpanel" aria-labelledby="reuse-tab">
+                {% if user_reuse_contributions %}
+                    {% for contribution in user_reuse_contributions %}
+                    <div class="card" style="width: 100%;">
                         <div class="card-body">
                         <h5 class="card-subtitle mb-2 text-muted">{{ contribution }} -> {{ contribution.reuse_action }}</h5>
                         <p class="card-text">{{ contribution.reuse_description }}</p>
@@ -59,45 +65,61 @@
                         </div>
                     </div>
                 {% endfor %}
+                {% else %}
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                        <h5 class="card-subtitle mb-2 text-muted">EaRRRth hero, you have no Reuse contributions yet!</h5>
+                        <p class="card-text p-3"><a class="nav-link profile-contribute-link hvr-sweep-to-right" href="{% url 'contribute' %}"><i
+                            class="fa-solid fa-leaf"></i> Contribute</a></p>
+                        </div>
+                    </div>
+                {% endif %}
                 </div>
                 <div class="tab-pane fade" id="reduce" role="tabpanel" aria-labelledby="reduce-tab">
-                {% for contribution in user_reduce_contributions %}
-                    {{ contribution.reduce_description }}
-                {% endfor %}
+                    {% if user_reduce_contributions %}
+                        {% for contribution in user_reduce_contributions %}
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                            <h5 class="card-subtitle mb-2 text-muted">{{ contribution }} -> {{ contribution.reduce_action }}</h5>
+                            <p class="card-text">{{ contribution.reduce_description }}</p>
+                            on: {{ contribution.date }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% else %}
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                            <h5 class="card-subtitle mb-2 text-muted">EaRRRth hero, you have no Reduce contributions yet!</h5>
+                            <p class="card-text p-3"><a class="nav-link profile-contribute-link hvr-sweep-to-right" href="{% url 'contribute' %}"><i
+                                class="fa-solid fa-leaf"></i> Contribute</a></p>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="tab-pane fade recycle-profile" id="recycle" role="tabpanel" aria-labelledby="recycle-tab">
-                {% for contribution in user_recycle_contributions %}
-                    {{ contribution.recycle_description }}
-                {% endfor %}
+                    {% if user_recycle_contributions %}
+                    {% for contribution in user_recycle_contributions %}
+                    <div class="card" style="width: 25%;">
+                        <div class="card-body">
+                        <h5 class="card-subtitle mb-2 text-muted">{{ contribution }} -> {{ contribution.recycle_action }}</h5>
+                        <p class="card-text">{{ contribution.recycle_description }}</p>
+                        on: {{ contribution.date }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                            <h5 class="card-subtitle mb-2 text-muted">EaRRRth hero, you have no Recycle contributions yet!</h5>
+                            <p class="card-text p-3"><a class="nav-link profile-contribute-link hvr-sweep-to-right" href="{% url 'contribute' %}"><i
+                                class="fa-solid fa-leaf"></i> Contribute</a></p>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
-<div class="row">
-    <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-        
-        <img src="{{ user_profile.image.url }}" alt="{{ user_profile }}'s avatar" style="height: 100px; width: 100px">
-        <span>Customize your profile by uploading an avatar!</span>
-        <span>Your avatar cannot be larger than 300px by 300px</span>
-        {% if user_profile_image_form.errors %}
-        <div class="alert alert-danger alert-dismissible" role="alert">
-            <div id="form_errors">
-                {% for key, value in user_profile_image_form.errors.items %}
-                    <strong>{{ value }}</strong>
-                {% endfor %}
-            </div>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        {% endif %}
-        <form method="POST" action="{% url 'profile' %}" class="form mb-2 mt-2" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ user_profile_image_form|crispy }}
-            <span class="text-off-white" id="image-text"></span>
-            <div class="text-right">
-            <button class="btn btn-black main-green-bg contrast-font mont-font-bold hvr-grow-shadow rounded-1 ms-4" type="submit" id="reuse_submit"><i class="fa-solid fa-circle-check"></i> Upload Avatar</button>
-            </div>
-        </form>
     </div>
 </div>
+
 {% endblock %}
