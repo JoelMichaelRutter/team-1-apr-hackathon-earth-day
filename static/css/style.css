@@ -55,6 +55,9 @@
     background-color: #eeeeee;
 }
 
+.dark-grey-font {
+    color: rgb(39, 65, 65);
+}
 /* end of colour helper classes */
 
 /* BOOTSTRAP OVERRIDES */
