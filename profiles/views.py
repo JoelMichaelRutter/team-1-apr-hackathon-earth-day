@@ -14,6 +14,11 @@ def profile(request):
     user_reuse_contributions = Reuse.objects.filter(profile=request.user)
     user_reduce_contributions = Reduce.objects.filter(profile=request.user)
     user_recycle_contributions = Recycle.objects.filter(profile=request.user)
+    reuse_count = len(user_reuse_contributions)
+    reduce_count = len(user_reduce_contributions)
+    recycle_count = len(user_recycle_contributions)
+
+
     User = get_user_model()
     user_profile = get_object_or_404(UserProfile, user=request.user)
     instance = UserProfile.objects.get(pk=request.user.id)
@@ -51,6 +56,9 @@ def profile(request):
         'user_reuse_contributions': user_reuse_contributions,
         'user_reduce_contributions': user_reduce_contributions,
         'user_recycle_contributions': user_recycle_contributions,
+        'reuse_count': reuse_count,
+        'reduce_count': reduce_count,
+        'recycle_count': recycle_count,
     }
     template = 'profiles/profile.html'
     return render(request, template, context)
