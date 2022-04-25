@@ -40,7 +40,7 @@ def add_recycle(request):
                 recycle_lvl,
                 f'Hail EaRRRth hero, your {recycle} -> {recycle.recycle_action} action has been saved'  # noqa ES501
             )
-            return redirect(reverse('home'))
+            return redirect(reverse('profile'))
     recycle_form = RecycleForm()
     reuse_form = ReuseForm()
     reduce_form = ReduceForm()
@@ -74,7 +74,7 @@ def add_reduce(request):
                 reduce_lvl,
                 f'Hail EaRRRth hero, your {reduce} -> {reduce.reduce_action} action has been saved'  # noqa ES501
             )
-            return redirect(reverse('home'))
+            return redirect(reverse('profile'))
     recycle_form = RecycleForm()
     reuse_form = ReuseForm()
     reduce_form = ReduceForm()
@@ -108,7 +108,7 @@ def add_reuse(request):
                 reuse_lvl,
                 f'Hail EaRRRth hero, your {reuse} -> {reuse.reuse_action} action has been saved'  # noqa ES501
             )
-            return redirect(reverse('home'))
+            return redirect(reverse('profile'))
     recycle_form = RecycleForm()
     reuse_form = ReuseForm()
     reduce_form = ReduceForm()

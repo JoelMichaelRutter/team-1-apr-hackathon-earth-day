@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/', default='/images/earth_solid.png')  # noqa ES501
+    image = models.ImageField(upload_to='images/', default='images/icons/icons8_ecosystem.png')  # noqa ES501
 
     def __str__(self):
         return self.user.username

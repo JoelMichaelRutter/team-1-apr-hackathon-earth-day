@@ -117,7 +117,7 @@
 
 
 .home-hero-image {
-    background-image: url('/media/images/home-hero-optimised.jpg');
+    background-image: url('https://res.cloudinary.com/earrrth/image/upload/v1650845435/static/images/home-hero-optimised.f15f8c8813cd.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -339,7 +339,7 @@
 
 /* ALL AUTH TEMPLATE STYLINGS */
 .account-hero-image {
-    background-image: url('/media/images/account-hero-optimised.jpg');
+    background-image: url('https://res.cloudinary.com/earrrth/image/upload/v1650845433/static/images/account-hero-optimised.6cd5f39c9aa5.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -362,7 +362,7 @@
 /* --------------CONTRIBUTIONS PAGE STYLING -------------------- */ 
 
 .contributions-hero-image {
-    background-image: url('/media/images/contributions-hero-optimised.jpg');
+    background-image: url('contributions-hero-optimised.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;

@@ -33,8 +33,17 @@ def profile(request):
                 'Hail EaRRRth hero, your snazzy new avatar has been uploaded'  # noqa ES501
             )
             return redirect(reverse('profile'))
+        else:
+            messages.error(
+                request,
+                'EaRRRth hero, something has gone amiss. The form was not valid.'  # noqa ES501
+            )
     else:
         form = UserProfileImageForm(instance=request.user)
+        messages.success(
+            request,
+            f'Welcome to your profile {user_profile}!'
+        )
 
     context = {
         'user_profile_image_form': form,
