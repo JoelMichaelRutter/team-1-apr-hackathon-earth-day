@@ -1,6 +1,18 @@
 # **[EaRRRth](#)**
 EaRRRth is an environmentaly focused, community based responsive web application where users can contribute their green objectives under the applications "Reuse, Reduce, Recycle" philosophy. Through this philosophy and the function of the site, users are able to select a contribution that they've made through the UI and add a comment to describe it. The users contribution is stored in a database and shown throughout the site. The community contributions are then counted and used as statistics throughout the site to promote more users to get involved.
 
+## Table of contents
+* ### [Deployed Site](#deployed-website)
+* ### [Demo](#site-demonstration)
+* ### [User Stories](#site-demonstration)
+* ### [UX](#user-experience)
+* ### [Design](#design-features)
+* ### [Features](#functional-features)
+* ### [Technologies](#technologies-used)
+* ### [Testing](#testing)
+* ### [Deployment](#local-deployment)
+* ### [Further Development](#further-development-scope)
+* ### [Team](#team-credits)
 
 ### Team
 
@@ -222,30 +234,15 @@ Add /admin to the end to access the admin panel with your superuser credentials.
 
     ![Heroku Postgress Add on](/images-readme/heroku-postgress-addon.png)
 
-3. Scroll back up and click "settings". Scroll down and click "Reveal config vars". Set up the same variables as in your env.py ():
+3. Scroll back up and click "settings". Scroll down and click "Reveal config vars". Set up the same variables as in your env.py () 
+
+**NOTE: you will not need the DEVELOPMENT variable on Heroku as this sets DEBUG to True - The deployed app must have DEBUG set to False:
 
     ```
-    AWS_ACCESS_KEY_ID = "AWS_ACCESS_KEY_ID"
-    AWS_SECRET_ACCESS_KEY = "AWS_SECRET_ACCESS_KEY"
-    AWS_S3_REGION_NAME = "AWS_S3_REGION_NAME"
-    AWS_STORAGE_BUCKET_NAME = "AWS_STORAGE_BUCKET_NAME"
-    USE_AWS = True
+    SECRET_KEY = '<your secret key>'
+    DATABASE_URL = '<your database URI - Heroku usually automatically sets this when you add the postgres addon>'
+    CLOUDINARY_URL = '<your cloudinary url - remember to remove the initial CLOUDINARY_URL= from the URI that you get from cloudinary>'
     
-    DATABASE_URL = "This variable is automatically set when adding the Postgres Add on"
-
-    SECRET_KEY = "SECRET_KEY"
-
-    STRIPE_PUBLIC_KEY = "STRIPE_PUBLIC_KEY"
-    STRIPE_SECRET_KEY = "STRIPE_SECRET_KEY"
-    STRIPE_WH_SECRET = "STRIPE_WH_SECRET"
-    STRIPE_CURRENCY = EUR
-
-    DEFAULT_FROM_EMAIL = "DEFAULT_FROM_EMAIL"
-    EMAIL_HOST = "smtp.gmail.com"
-    EMAIL_HOST_PASS = "EMAIL_HOST_PASS"
-    EMAIL_HOST_USER = "EMAIL_HOST_USER"
-    EMAIL_PORT = 587
-    EMAIL_USE_TLS = True
     ```
 4. From this screen, copy the value of DATABASE_URL
 5. After this go to your settings.py the "" directory and comment out the default database configuration and add:
@@ -267,7 +264,7 @@ Add /admin to the end to access the admin panel with your superuser credentials.
 
     --> Don't forget to login to the admin page and check the boxes 'Verified and primary"
 
-8. Load the data into your newly created database by using the following command: 
+8. If you have data fixtures load the data into your newly created database by using the following command: 
 
     ```
     python3 manage.py loaddata <name of file containing the data *>
@@ -300,7 +297,7 @@ This set up will allow your site to use Postgres in deployment and sqlite3 in de
     ```
     echo web: python app.py > Procfile
     ```
-11. The Procfile should contain the following line:
+11. The Procfile should contain the following line where <project_name> is the name of your root app locally:
     ```
     web: gunicorn <project_name>.wsgi:application
 
@@ -314,47 +311,25 @@ This set up will allow your site to use Postgres in deployment and sqlite3 in de
     ```
 
 13. Add your Heroku app URL to ALLOWED_HOSTS in your settings.py file
-14. Disable collect static so that Heroku doesn't try to collect static files when you deploy by typing the following command in the terminal
+14. Login to heroku and enter your details, command: heroku login -i
+15. Get your app name from heroku, command:  heroku apps
+16. Set the heroku remote. (Replace <app_name> with your actual app name), command: heroku git:remote -a <app_name>
+17. Add, commit and push to github, command: git add . && git commit -m "Deploy to Heroku via CLI"
+18. Push to both github and heroku, 
+- command: git push origin main 
+- command: git push heroku main
+
+MFA/2FA enabled?
+*  Click on Account Settings (under the avatar menu)
+*  Scroll down to the API Key section and click Reveal. Copy the key.
+*  Enter the command:  heroku_config , and enter your api key you copied when prompted
+*  Complete the steps 14 - 18 above, if you see an input box at the top middle of the editor...   a. enter your heroku username   b. enter the api key you just copied
+*  Need to deploy again? You should just be able to add, commit and push, and if prompted enter your username and api key again.
+19. Disable collect static so that Heroku doesn't try to collect static files during the initial deployment when you deploy by typing the following command in the terminal
     ```
     heroku config:set DISABLE_COLLECTSTATIC=1
     ```
-15. Go back to HEROKU and click "Deploy" in the navigation. 
-16. Scroll down to Deployment method and Select Github. 
-17. Look for your repository and click connect. 
-18. Under automatic deploys, click 'Enable automatic deploys'
-
-19. Just beneath, click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
-20. In order to commit your changes to the branch, use git push to push your changes. 
-
-21. Set up email service to send confirmation email and user verification email to the users. You can do this by following the next steps (Gmail only)
-
-(Be aware that this migth be different for other providers or the process might have changed over time)
-
-* Go to your email account and go to your account settings
-* Under Security, scroll down to Signing in to Google and make sure 2 step verification is turned on
-* Under the same heading (Signing in to Google) you will see the 'App passwords' option.
-* Click on the option, select mail for the app and under device type select other and fill in 'Django'
-* You will now get a password which you should copy and set it as a config variable in Heroku:
-
-```
-    EMAIL_HOST_PASS = 'Password you just copied'
-    EMAIL_HOST_USER = 'Your gmail account
-```
-* Go to your settings.py in casa_pedra_nobre directory and add the following:
-
-```
-    if "DEVELOPMENT" in os.environ:
-        EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-        DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-    else:
-        EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-        EMAIL_USE_TLS = True
-        EMAIL_PORT = 587
-        EMAIL_HOST = 'smtp.gmail.com'
-        EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-        EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
-        DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-```
+20. If ready for final deployment, ensure DEBUG is False, remove DISABLE_COLLECTSTATIC from heroku Config vars and repeat steps 14-18 
 
 ## **References**
 Our privacy policy was generated with this [link](https://app.freeprivacypolicy.com/download/5e14f11c-1d94-47f0-aa11-5e6394210b25) on [freeprivacypolicy.com](https://app.freeprivacypolicy.com/).
