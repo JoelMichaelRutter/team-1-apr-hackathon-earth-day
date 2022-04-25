@@ -12,25 +12,29 @@
 <div class="container g-0 d-flex justify-content-center flex-column pt-5">
     <div class="row g-0">
         <div class="col-3 d-flex align-items-center justify-content-center p-3">
-            <img src="https://res.cloudinary.com/earrrth/image/upload/v1650846394/static/images/icons/icons8_reduce.ceb47e39c320.png" class="rounded me-2 end-0" alt="default profile avatar" style="height:6vmin; width:6vmin; border-radius: 50%; border: solid 1px grey;">
+            <img src="https://res.cloudinary.com/earrrth/image/upload/v1650846394/static/images/icons/icons8_reduce.ceb47e39c320.png" class="rounded me-2 end-0" alt="default profile avatar" style="height:12vmin; width:12vmin; border-radius: 50%; border: solid 1px grey;">
         </div>
-        <div class="col-9 d-flex justify-content-center align-items-center p-3 profile-header">
-            <h1 class="align-self-center">Welcome <span>{{ user_profile }}</span></h1>
+        <div class="col-12 col-sm-9 d-flex justify-content-center align-items-center p-3 profile-header">
+            <h1 class="align-self-center text-center">Welcome <span class="fw-bold fst-italic">{{ user_profile }}</span>!</h1>
         </div>
     </div>
     
     <div class="row g-0">
         <div class="col-3 d-flex justify-content-center p-3">
-            <div>
-                <ul>
-                    <li>reuse: {{ reuse_count }}</li>
-                    <li>reduce: {{ reduce_count }}</li>
-                    <li>recycle: {{ recycle_count }}</li>
+            <div id="profile_ul">
+                <ul" class="fw-bold">
+                    <li>Reuse: {{ reuse_count }}</li>
+                    <li>Reduce: {{ reduce_count }}</li>
+                    <li>Recycle: {{ recycle_count }}</li>
                 </ul>
             </div>
         </div>
-        <div class="col-9 text-center align-bottom p-3 profile-header">
-            <h2 class="align-self-center">See all your <span class="train-font">EaRRRth</span> actions</h2>
+        <div class="col-9 text-center align-bottom pt-5 profile-sub-header fst-italic">
+            <h2 class="align-self-center">See all of your <span class="train-font">EaRRRth</span> actions below!
+                <div class="mt-2">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </h2>
         </div>
     </div>
     
@@ -38,7 +42,7 @@
     <div class="row justify-content-md-center g-0">
         <div class="col-3 d-flex justify-content-center p-3">
         </div>
-        <div class="col-9">
+        <div class="col-12 col-md-9">
             <ul class="nav nav-tabs profile-tabs" id="myTab" role="tablist">
                 <li id="reuse-list-item" class="nav-item hvr-sweep-to-right contribution-tab-link" role="presentation">
                     <button class="nav-link train-font reuse-profile " id="reuse-tab" data-bs-toggle="tab" data-bs-target="#reuse"

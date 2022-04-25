@@ -27,6 +27,10 @@ ul.nav.nav-tabs {
     background-color: #8a7310c0;
 }
 
+.profile-sub-header {
+    background-color: #FDE181;
+}
+
 /* FONT HELPER CLASSES -----------------------------*/
 
 .train-font {
@@ -529,6 +533,12 @@ ul.nav.nav-tabs {
 .cont-card {
     width: 90%;
     margin: 0 auto;
+}
+
+#profile_ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 #grey-background {
