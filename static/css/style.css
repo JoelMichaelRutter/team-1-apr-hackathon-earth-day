@@ -362,7 +362,7 @@
 /* --------------CONTRIBUTIONS PAGE STYLING -------------------- */ 
 
 .contributions-hero-image {
-    background-image: url('contributions-hero-optimised.jpg');
+    background-image: url('../images/contributions-hero-optimised.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
