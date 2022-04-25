@@ -11,28 +11,16 @@ from profiles.models import UserProfile
 def contributions(request):
     """ A view to show contributions form """
 
-    if request.user.is_authenticated:
+    recycle_form = RecycleForm()
+    reuse_form = ReuseForm()
+    reduce_form = ReduceForm()
 
-        recycle_form = RecycleForm()
-        reuse_form = ReuseForm()
-        reduce_form = ReduceForm()
-
-        context = {
-            'recycle_form': recycle_form,
-            'reuse_form': reuse_form,
-            'reduce_form': reduce_form,
-        }
-        return render(request, 'contributions/contributions.html', context)
-    else:
-        messages.info(
-            request,
-            "Hail anonymous user! We'd love to hear what EaRRRth action you've taken recently!"  # noqa ES501
-        )
-        messages.error(
-            request,
-            'Please register an account to add your contribution'
-        )
-        return redirect('/accounts/signup/')
+    context = {
+        'recycle_form': recycle_form,
+        'reuse_form': reuse_form,
+        'reduce_form': reduce_form,
+    }
+    return render(request, 'contributions/contributions.html', context)
 
 
 @login_required
