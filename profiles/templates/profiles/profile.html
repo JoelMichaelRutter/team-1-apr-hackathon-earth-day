@@ -78,7 +78,7 @@
                 <div class="tab-pane fade" id="reduce" role="tabpanel" aria-labelledby="reduce-tab">
                     {% if user_reduce_contributions %}
                         {% for contribution in user_reduce_contributions %}
-                        <div class="card" style="width: 25%;">
+                        <div class="card" style="width: 100%;">
                             <div class="card-body">
                             <h5 class="card-subtitle mb-2 text-muted">{{ contribution }} -> {{ contribution.reduce_action }}</h5>
                             <p class="card-text">{{ contribution.reduce_description }}</p>
