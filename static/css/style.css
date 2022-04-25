@@ -134,7 +134,7 @@ ul.nav.nav-tabs {
 
 
 .home-hero-image {
-    background-image: url('/media/images/home-hero-optimised.webp');
+    background-image: url('https://res.cloudinary.com/earrrth/image/upload/v1650859237/static/images/home-hero-optimised.d45118524c10.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -356,7 +356,7 @@ ul.nav.nav-tabs {
 
 /* ALL AUTH TEMPLATE STYLINGS */
 .account-hero-image {
-    background-image: url('/media/images/account-hero-optimised.webp');
+    background-image: url('https://res.cloudinary.com/earrrth/image/upload/v1650859237/static/images/account-hero-optimised.1941640ec775.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -379,7 +379,7 @@ ul.nav.nav-tabs {
 /* --------------CONTRIBUTIONS PAGE STYLING -------------------- */ 
 
 .contributions-hero-image {
-    background-image: url('/media/images/contributions-hero-optimised.webp');
+    background-image: url('https://res.cloudinary.com/earrrth/image/upload/v1650859235/static/images/contributions-hero-optimised.3c77a73eda28.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
