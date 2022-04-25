@@ -24,8 +24,4 @@ urlpatterns = [
     path('', include('home.urls'), name='home.urls'),
     path('', include('profiles.urls'), name='profiles.urls'),
     path('', include('contributions.urls'), name='contributions.urls'),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
