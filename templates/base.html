@@ -2,88 +2,167 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block corecss %}
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+      integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5"
+      crossorigin="anonymous"
+    />
+    <!-- HOVER CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
+      integrity="sha512-SJw7jzjMYJhsEnN/BuxTWXkezA2cRanuB8TdCNMXFJjxG9ZGSKOX5P3j03H6kdMxalKHZ7vlBMB4CagFP/de0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    {% endblock %} {% block corejs %}
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    {% endblock %}
 
-  {% block corecss %}
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- Font awesome CDN -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
-    integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous" />
-  <!-- HOVER CSS CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
-    integrity="sha512-SJw7jzjMYJhsEnN/BuxTWXkezA2cRanuB8TdCNMXFJjxG9ZGSKOX5P3j03H6kdMxalKHZ7vlBMB4CagFP/de0A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Custom CSS -->
-  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
-  {% endblock %}
+    <title>EaRRRth {% block extra_title %}{% endblock %}</title>
+  </head>
 
-  {% block corejs %}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
-  {% endblock %}
-
-  <title>EaRRRth {% block extra_title %}{% endblock %}</title>
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark main-green-bg">
-    <div class="container-fluid">
-      <a class="navbar-brand train-font contrast-font" id="navbar-logo" href="{% url 'home' %}">
-        <i class="fa-solid fa-earth-europe logo-icon"></i>Ea<span class="text-uppercase">rrr</span>th</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#earth-navbar"
-        aria-controls="earth-navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="earth-navbar">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mont-font">
-          <li class="nav-item">
-            <a class="nav-link contrast-font hvr-underline-from-left" aria-current="page" href="{% url 'home' %}"><i
-                class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'contribute' %}"><i
-                class="fa-solid fa-leaf"></i> Contribute</a>
-          </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'profile' %}"><i
-                class="fa-solid fa-user"></i> My Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link contrast-font hvr-underline-from-left" href="{% url 'account_logout' %}"><i
-                class="fa-solid fa-door-open"></i> Sign Out</a>
-          </li>
-          {% else %}
-          <li class="nav-item dropdown">
-            <a class="nav-link contrast-font dropdown-toggle" href="#" id="navbarDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-user"></i> Profile
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="{% url 'account_login' %}"><i
-                    class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</a></li>
-              <li><a class="dropdown-item" href="{% url 'account_signup' %}"><i class="fa-solid fa-list"></i>
-                  Register</a></li>
-            </ul>
-          </li>
-          {% endif %}
-        </ul>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark main-green-bg">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand train-font contrast-font"
+          id="navbar-logo"
+          href="{% url 'home' %}"
+        >
+          <i class="fa-solid fa-earth-europe logo-icon"></i>Ea<span
+            class="text-uppercase"
+            >rrr</span
+          >th</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#earth-navbar"
+          aria-controls="earth-navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="earth-navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mont-font">
+            <li class="nav-item">
+              <a
+                class="nav-link contrast-font hvr-underline-from-left"
+                aria-current="page"
+                href="{% url 'home' %}"
+                ><i class="fa-solid fa-house"></i> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link contrast-font hvr-underline-from-left"
+                href="{% url 'contribute' %}"
+                ><i class="fa-solid fa-leaf"></i> Contribute</a
+              >
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a
+                class="nav-link contrast-font hvr-underline-from-left"
+                href="{% url 'profile' %}"
+                ><i class="fa-solid fa-user"></i> My Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link contrast-font hvr-underline-from-left"
+                href="{% url 'account_logout' %}"
+                ><i class="fa-solid fa-door-open"></i> Sign Out</a
+              >
+            </li>
+            {% else %}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link contrast-font dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-user"></i> Profile
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{% url 'account_login' %}"
+                    ><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign
+                    In</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'account_signup' %}"
+                    ><i class="fa-solid fa-list"></i> Register</a
+                  >
+                </li>
+              </ul>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
       </div>
+    </nav>
+    <div class="container-fluid main-content lower-contrast-bg">
+      {% block content %} {%endblock %}
     </div>
-  </nav>
-  <div class="container-fluid main-content lower-contrast-bg">
-    {% block content %}
-    {%endblock %}
-  </div>
-  {% block postloadjs %}
-  {% endblock %}
-</body>
-
+    <footer class="mt-5 py-3" id="grey-background">
+      <div class="row my-auto" id="social-network-icons">
+        <div class="col-3">
+          <a href="https://www.facebook.com" target="_blank">
+            <i class="fab fa-facebook-square"></i>
+          </a>
+        </div>
+        <div class="col-3">
+          <a href="https://www.twitter.com" target="_blank">
+            <i class="fab fa-twitter-square"></i
+          ></a>
+        </div>
+        <div class="col-3">
+          <a href="https://www.youtube.com" target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+        <div class="col-3">
+          <a href="https://www.instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 offset-3 text-center">
+          <button class="btn btn-danger">I AM A BUTTON AAHHHHH!!!!</button>
+          <button class="btn btn-primary">DUDE CHILL!!!</button>
+        </div>
+      </div>
+    </footer>
+    {% block postloadjs %} {% endblock %}
+  </body>
 </html>

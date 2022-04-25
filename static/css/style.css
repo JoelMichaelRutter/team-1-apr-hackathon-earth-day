@@ -507,3 +507,17 @@
     width: 90%;
     margin: 0 auto;
 }
+
+
+#grey-background {
+    background-color: #eeeeee;
+}
+
+#social-network-icons {
+    text-align: center;
+}
+
+#social-network-icons i {
+    color: #498E61;
+    font-size: 3rem;
+}
