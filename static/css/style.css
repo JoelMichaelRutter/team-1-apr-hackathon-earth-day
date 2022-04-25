@@ -477,8 +477,7 @@
 .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-  }
-
+}
 
 .custom-danger-button {
     background-color: #8a7618;
@@ -512,11 +511,15 @@
     margin: 0 auto;
 }
 
-  /* --------------PROFILES PAGE STYLING -------------------- */
-  @media screen and (min-width:464px){
-    .reuse-profile,
-    .reduce-profile,
-    .recycle-profile {
-        font-size: 1.5rem!important;
-    }
-  }
+#grey-background {
+    background-color: #eeeeee;
+}
+
+#social-network-icons {
+    text-align: center;
+}
+
+#social-network-icons i {
+    color: #498E61;
+    font-size: 3rem;
+}
