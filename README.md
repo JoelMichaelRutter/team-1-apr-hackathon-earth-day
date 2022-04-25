@@ -1,23 +1,19 @@
 # **[EaRRRth](#)**
 EaRRRth is an environmentaly focused, community based responsive web application where users can contribute their green objectives under the applications "Reuse, Reduce, Recycle" philosophy. Through this philosophy and the function of the site, users are able to select a contribution that they've made through the UI and add a comment to describe it. The users contribution is stored in a database and shown throughout the site. The community contributions are then counted and used as statistics throughout the site to promote more users to get involved.
 
-## Table of contents
-* ### [Deployed Site](#deployed-website)
-* ### [Demo](#site-demonstration)
-* ### [User Stories](#site-demonstration)
-* ### [UX](#user-experience)
-* ### [Design](#design-features)
-* ### [Features](#functional-features)
-* ### [Technologies](#technologies-used)
-* ### [Testing](#application-testing) - IS THIS NEEDED?
-* ### [Deployment](#deploying-the-site) - IS THIS NEEDED?
-* ### [Further Development](#further-development-scope)
-* ### [Team](#team-credits)
 
-## [**Deployed Website**](#)  
+### Team
+
+- **John Traas**
+- **Joel Rutter**
+- **John Muckian**
+- **Noumair Rafiq**
+- **Shaun Bonner**
+- **Aws Sabah Gheni**
+### Deployed Website
 By clicking the hyperlinked header above, you can access the final deployed site hosted on Heroku.
 
-## <a id="site-demonstration"> **Site Demonstration**</a>  
+### Site Demonstration 
 ![An image of the site on different viewports](#) - WE NEED AN AM I RESPONSIVE IMAGE HERE, I'VE PRETTY GOOD A DOCTORING THESE SEEING AS IT DOESNT WORK FOR FULL STACK PROJECTS
 
 ## **User Stories**
@@ -69,13 +65,22 @@ Beneath the hero image, there is a dynamicly designed grid of site user statisti
 ### **Contributions**
 Our contributions page starts with a hero image and message box. The message box contains data specific to the individual RRR categories, specifically their total contributions. They are also complemented with corresponding icons for easy identification.
 
-Next are the tabs for the three RRRs, nicely contrasting each other. Clicking a tab updates the R actions available to the user in the dropdown menu beneath. The user, if they are a signed in member, can also leave a comment describing the specifics of their fulfillment of the R action they took. They can then click the "Submit" button to save to the sites database. This will update the site data for that R action and display on the home page infographic grid and the contributions page hero image message container. Alternatively, the user can clear the form using "Reset".
+Next are the tabs for the three RRRs, nicely contrasting each other. Clicking a tab updates the R actions available to the user in the dropdown menu beneath. The user, if they have signed up or signed in, can leave a comment describing the specifics of their fulfillment of the R action they took. They can then click the "Submit" button to save to the sites database. This will update the site data for that R action and display on the home page infographic grid and the contributions page hero image message container. Alternatively, the user can clear the form using "Reset".
 
-Signed up users who added comments to their contributions have them categoried and displayed at the bottom of the page. These are available for all users to view.
+Members who added comments to their contributions have them categoried and displayed at the bottom of the page. These are available for all users to view.
 
 ### **Sign In / Register**
-These pages present similarly, with a fun hero image filling the full background. In the top right is a message box containing the user forms, asking for either registration information or sign in membership information. The user has an option to switch to the alternative form via a message link, as an alternative to using the navigation elements.
+These pages present similarly, with a fun hero image filling the full background. In the top right is a message box containing the user forms, asking for either registration information or sign in membership information. User email is optional for users who do not wish to share. When the user types a username in the field, they are given a character count of 30. The user's keystrokes are tracked automatically counting down to 0 with each press. The user has an option to switch to the alternative form via a message link, as an alternative to using the navigation elements.
 
+### **Profile**
+The user profile contains a user avatar, a welcome banner containing the username or email used to sign up, the users R action totals and a sub-heading directing the user down to their contributions. The R actions are again divided between 3 contrasting tabs. If the user has not yet contributed, they have a link button directing them to the contributions page so they can get started. Each contribution displays the R action, action category, comment/description of the action and a date of posting.
+
+### **Toasts**
+User toasts provide extra dynamism to the site, giving the user extra feedback on their actions. They are linked to navigation elements and UI buttons, providing the user snippets of information based on the item they have clicked or the page they have loaded. The toasts are styles in line with the overall site theme with fun icons and words of encouragement to enhance the users journey.
+
+### **Data Schema**
+
+[Here](docs/data-schema/data_schema_plan.png) is the data schema draft we constructed for the initial planning faze of the project. The actual schema has been modified and adapted from this prototype.
 
 ## **Features**
 
@@ -118,5 +123,248 @@ These pages present similarly, with a fun hero image filling the full background
 9. [Heroku:](https://en.wikipedia.org/wiki/Heroku)
     - Heroku is a cloud platform as a service (PaaS) supporting several programming languages. It serves as the host platform for our website.
 
+## **Testing**
+
+### Home
+
+#### Readability
+Contrasting fonts and container colors, site's legibility, comprehension, language & grammar and ease of reading all considered and tested. Intended result achieved.
+#### Accessibility
+All page elements move and scale well when changing between screen sizes. No text or color overflow into wrong containers. Spacing between rows is maintained. No unintended effects detected. Navbar collapses as intended to burger horizontal lines on smaller screen widths.
+#### Navigability
+Clicking the site logo reloads the home page as intended. All buttons on navigation link to their intended location. Contribute button in hero message links to the contributions page as intended. Social media icons in footer working as intended. Privacy policy modal expands and collapsed correctly using UI buttons.
+
+#### UX
+The home page infographic grid updates its info based on users contributing as intended. Data is displaying in the specific categories as intended. Use of colors, shapes and imagery provides an enjoyable experience for the user. Toast messages working as intended.
+
+### Contributions
+
+#### Readability
+Contrasting fonts and container colors, site's legibility, comprehension, language & grammar and ease of reading all considered and tested. Intended result achieved. 
+#### Accessibility
+All page elements move and scale well when changing between screen sizes. No text or color overflow into wrong containers. Spacing between rows is maintained. No unintended effects detected. Navbar collapses as intended to burger horizontal lines on smaller screen widths.
+#### Navigability
+Clicking the site logo reloads the home page as intended. All buttons on navigation link to their intended location. Social media icons in footer working as intended. Privacy policy modal expands and collapsed correctly using UI buttons.
+
+#### Task Success
+The user can click a tab, choose an action and fill in a description successfully. The Submit Contribution button works as intended and the contribution is added to the corresponding column on this page as well as the corresponding tab on the profile page. All user creations saved and displaying as intended.
+#### UX
+The hero image infographic stats updates its info based on users contributing as intended. User posts are displaying in their specific categories as intended. Use of colors, shapes and imagery provides an enjoyable experience for the user. Toast messages working as intended.
+
+### Profile
+
+#### Readability
+Contrasting fonts and container colors, legibility, comprehension, language & grammar and ease of reading all considered and tested. Intended result achieved. 
+#### Accessibility
+All page elements move and scale well when changing between screen sizes. No text or color overflow into wrong containers. Spacing between rows is maintained. No unintended effects detected. Navbar collapses as intended to burger horizontal lines on smaller screen widths.
+#### Navigability
+Clicking the site logo reloads the home page as intended. All buttons on navigation link to their intended location. Tabs display correct info. Contribute button, when user has no previous posts, works as intended. Social media icons in footer working as intended. Privacy policy modal expands and collapsed correctly using UI buttons.
+
+#### UX
+The user icon, profile heading, user stats and R action tabs displaying correctly. User posts are displaying in their specific categories as intended. Use of colors, shapes and imagery provides an enjoyable experience for the user. Toast messages working as intended.
+
+### Sign In / Out / Register
+
+#### Readability
+Contrasting fonts and container colors, legibility, comprehension, language & grammar and ease of reading all considered and tested. Intended result achieved.
+#### Accessibility
+All page elements move and scale well when changing between screen sizes. No text or color overflow into wrong containers. Spacing between rows is maintained. No unintended effects detected. Navbar collapses as intended to burger horizontal lines on smaller screen widths.
+#### Navigability
+Clicking the site logo reloads the home page as intended. All buttons on navigation link to their intended location. With appropriate form info inputted the user is linked to the Contributions page as intended. Sign up/sign in links on form work as intended. All form elements working as intended. Social media icons in footer working as intended. Privacy policy modal, in both page form and footer, expands and collapsed correctly using UI buttons.
+
+#### UX
+The form, form fields, form info and buttons are displaying correctly. Form contrasting with hero image as intended. Use of colors, shapes and imagery provides an enjoyable experience for the user. Toast messages working as intended.
+
+## Deployment
+
+### Local Deployment
+ We used Gitpod for development, so the following steps will be specific to Gitpod. You will need to adjust them depending on your IDE. You can find more information about installing packages using pip and virtual environments [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/). This project can be run locally by following these steps:
+
+1. From the application's repository, click the "code" button and download the zip of the repository. Alternatively, you can clone the repository using the following line in your terminal:
+```
+git clone https://github.com/JoelMichaelRutter/team-1-apr-hackathon-earth-day
+```
+2. Access the folder in your terminal window and install the application's link to re/reqquired modules using the following command:
+```
+pip3 install -r requirements.txt
+```
+3. In your IDE, create a file containing your environmental variables called env.py at the root level of the application. It will need to contain the following lines and variables:
+```
+import os
+
+os.environ['SECRET_KEY'] = ''
+os.environ['DEVELOPMENT'] = ''
+os.environ['DATABASE_URL'] = ''
+os.environ['CLOUDINARY_URL'] = ''
+```
+If you're not sure how to get the above Cloudinary variables, please visit the Cloudinary documentation. Also, if you plan on pushing this application to a public repository, ensure that env.py is added to your .gitignore file.
+
+
+4. Migrate the database models with the following command:
+```
+python3 manage.py migrate
+```
+5. Create a superuser and set up the credentials with the following command
+```
+python3 manage.py createsuperuser
+```
+6. Run the app with the following command
+```
+python manage.py runserver
+```
+The address to access the website is displayed in the terminal.
+Add /admin to the end to access the admin panel with your superuser credentials.
+
+### Heroku Deployment
+1. Login to your Heroku account and create a new app. Choose your region. 
+2. Once the app is created click on the resources button and under Add-ons, look for the Heroku Postgres to attach a postgres database to your project.
+    Select the Hobby Dev - Free plan and click 'Submit order form'
+
+    ![Heroku Postgress Add on](/images-readme/heroku-postgress-addon.png)
+
+3. Scroll back up and click "settings". Scroll down and click "Reveal config vars". Set up the same variables as in your env.py ():
+
+    ```
+    AWS_ACCESS_KEY_ID = "AWS_ACCESS_KEY_ID"
+    AWS_SECRET_ACCESS_KEY = "AWS_SECRET_ACCESS_KEY"
+    AWS_S3_REGION_NAME = "AWS_S3_REGION_NAME"
+    AWS_STORAGE_BUCKET_NAME = "AWS_STORAGE_BUCKET_NAME"
+    USE_AWS = True
+    
+    DATABASE_URL = "This variable is automatically set when adding the Postgres Add on"
+
+    SECRET_KEY = "SECRET_KEY"
+
+    STRIPE_PUBLIC_KEY = "STRIPE_PUBLIC_KEY"
+    STRIPE_SECRET_KEY = "STRIPE_SECRET_KEY"
+    STRIPE_WH_SECRET = "STRIPE_WH_SECRET"
+    STRIPE_CURRENCY = EUR
+
+    DEFAULT_FROM_EMAIL = "DEFAULT_FROM_EMAIL"
+    EMAIL_HOST = "smtp.gmail.com"
+    EMAIL_HOST_PASS = "EMAIL_HOST_PASS"
+    EMAIL_HOST_USER = "EMAIL_HOST_USER"
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    ```
+4. From this screen, copy the value of DATABASE_URL
+5. After this go to your settings.py the "" directory and comment out the default database configuration and add:
+    ```
+    DATABASES = {
+        'default': dj_database_url.parse('Put your DATABASE_URL here'))
+    }
+    ```
+6. Migrate again with the following command
+    ```
+    python3 manage.py migrate
+    ```
+
+
+7. Create a superuser for the postgres database so you can have access to the django admin by setting up the credentials with the following command
+    ```
+    python3 manage.py createsuperuser
+    ```
+
+    --> Don't forget to login to the admin page and check the boxes 'Verified and primary"
+
+8. Load the data into your newly created database by using the following command: 
+
+    ```
+    python3 manage.py loaddata <name of file containing the data *>
+    ``` 
+
+
+9. After migrations are complete, change database configurations to:
+```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+```
+This set up will allow your site to use Postgres in deployment and sqlite3 in development.
+
+
+10. Make sure you have your requirements.txt file and your Procfile. In case you don't, follow the below steps:
+    Requirements:
+    ```
+    pip3 freeze --local > requirements.txt
+    ```
+    Procfile:
+    ```
+    echo web: python app.py > Procfile
+    ```
+11. The Procfile should contain the following line:
+    ```
+    web: gunicorn <project_name>.wsgi:application
+
+    ```
+
+12. Add your files and commit them to GITHUB by running the following commands:
+    ```
+    git add . 
+    git commit -m "Your commit message"
+    git push
+    ```
+
+13. Add your Heroku app URL to ALLOWED_HOSTS in your settings.py file
+14. Disable collect static so that Heroku doesn't try to collect static files when you deploy by typing the following command in the terminal
+    ```
+    heroku config:set DISABLE_COLLECTSTATIC=1
+    ```
+15. Go back to HEROKU and click "Deploy" in the navigation. 
+16. Scroll down to Deployment method and Select Github. 
+17. Look for your repository and click connect. 
+18. Under automatic deploys, click 'Enable automatic deploys'
+
+19. Just beneath, click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
+20. In order to commit your changes to the branch, use git push to push your changes. 
+
+21. Set up email service to send confirmation email and user verification email to the users. You can do this by following the next steps (Gmail only)
+
+(Be aware that this migth be different for other providers or the process might have changed over time)
+
+* Go to your email account and go to your account settings
+* Under Security, scroll down to Signing in to Google and make sure 2 step verification is turned on
+* Under the same heading (Signing in to Google) you will see the 'App passwords' option.
+* Click on the option, select mail for the app and under device type select other and fill in 'Django'
+* You will now get a password which you should copy and set it as a config variable in Heroku:
+
+```
+    EMAIL_HOST_PASS = 'Password you just copied'
+    EMAIL_HOST_USER = 'Your gmail account
+```
+* Go to your settings.py in casa_pedra_nobre directory and add the following:
+
+```
+    if "DEVELOPMENT" in os.environ:
+        EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+        DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+    else:
+        EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+        EMAIL_USE_TLS = True
+        EMAIL_PORT = 587
+        EMAIL_HOST = 'smtp.gmail.com'
+        EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+        EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+        DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+```
+
 ## **References**
 Our privacy policy was generated with this [link](https://app.freeprivacypolicy.com/download/5e14f11c-1d94-47f0-aa11-5e6394210b25) on [freeprivacypolicy.com](https://app.freeprivacypolicy.com/).
+
+### Media
+
+-   All Images were sourced online from sources using creative commons licences or from royalty free sites like Pixabay, Stockvault and Pexels.
+
+### Acknowledgements
+
+- A big thank you to the Slack community, mentors and community managers. There is great value in the community they've helped foster and coding is so much less stressful knowing we have the help we have.
+
+- Thanks to Dave Horrocks for his guidance and support in this Hackathon project. Cheers Dave! It was a blast!
