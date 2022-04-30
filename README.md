@@ -1,6 +1,8 @@
 # **[EaRRRth](#)**
 EaRRRth is an environmentaly focused, community based responsive web application where users can contribute their green objectives under the applications "Reuse, Reduce, Recycle" philosophy. Through this philosophy and the function of the site, users are able to select a contribution that they've made through the UI and add a comment to describe it. The users contribution is stored in a database and shown throughout the site. The community contributions are then counted and used as statistics throughout the site to promote more users to get involved.
 
+You can find the live website [here](https://earrrth.herokuapp.com/)
+
 ## Table of contents
 * ### [Deployed Site](#deployed-website)
 * ### [Demo](#site-demonstration)
